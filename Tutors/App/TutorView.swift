@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TutorView.swift
 //  Tutors
 //
 //  Created by Alan on 17.5.2021.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TutorView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Tutors")
             .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TutorView()
     }
 }
