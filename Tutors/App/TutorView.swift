@@ -13,13 +13,14 @@ struct TutorView: View {
     
     //MARK: - body
     var body: some View {
-        VStack {
-            SearchBar(text: $searchText)
-                .padding(.horizontal, 8)
-            
-//            SubjectGridView()
-            
-            CardGridView(tutors: Tutor.data)
+        NavigationView {
+            VStack {
+                SearchBar(text: $searchText)
+                    .padding(.horizontal, 8)
+                
+                CardGridView(tutors: Tutor.data)
+            }
+            .navigationBarTitle("Tutors")
         }
         .background(colorBackground)
     }

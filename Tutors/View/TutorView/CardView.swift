@@ -15,6 +15,7 @@ struct CardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: radius).fill(Color.white)
+            RoundedRectangle(cornerRadius: radius).stroke(colorGray)
             
             VStack {
                 Image(tutor.photoURL)
@@ -39,8 +40,10 @@ struct CardView: View {
                         
                 } //: hstack
                 .font(.title3)
+                
             }//: vstack
             .padding()
+            .foregroundColor(.black)
         }
     }
 }

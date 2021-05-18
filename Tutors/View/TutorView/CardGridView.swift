@@ -16,7 +16,10 @@ struct CardGridView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: gridLayout, spacing: rowSpacing ,content: {
                 ForEach(tutors) {tutor in
-                    CardView(tutor: tutor)
+                    NavigationLink(destination: TutorDetailView(tutor: tutor)) {
+                        CardView(tutor: tutor)
+                    }
+                    
                 }//: loop
             })//: grid
             .padding(15)

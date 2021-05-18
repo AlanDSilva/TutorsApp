@@ -24,6 +24,8 @@
 		E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875342653D30C00FC21F3 /* SubjectGridView.swift */; };
 		E78875372653D38F00FC21F3 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875362653D38F00FC21F3 /* SectionView.swift */; };
 		E78875392653D97200FC21F3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875382653D97200FC21F3 /* SearchBar.swift */; };
+		E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788753A2653E15C00FC21F3 /* TutorDetailView.swift */; };
+		E78875402653E95200FC21F3 /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788753F2653E95200FC21F3 /* HeadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E78875342653D30C00FC21F3 /* SubjectGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectGridView.swift; sourceTree = "<group>"; };
 		E78875362653D38F00FC21F3 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		E78875382653D97200FC21F3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		E788753A2653E15C00FC21F3 /* TutorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDetailView.swift; sourceTree = "<group>"; };
+		E788753F2653E95200FC21F3 /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				E78875192652A43000FC21F3 /* App */,
-				E78875272653932500FC21F3 /* View */,
+				E788753D2653E90D00FC21F3 /* View */,
+				E788753C2653E8E500FC21F3 /* New Group */,
 				E78875222652A9A300FC21F3 /* Model */,
 				E788752A2653A41300FC21F3 /* Utility */,
 				E788750E2652A30200FC21F3 /* Assets.xcassets */,
@@ -102,6 +107,7 @@
 			children = (
 				E788750A2652A2F300FC21F3 /* TutorsApp.swift */,
 				E788750C2652A2F300FC21F3 /* TutorView.swift */,
+				E788753A2653E15C00FC21F3 /* TutorDetailView.swift */,
 				E788751C2652A4C900FC21F3 /* ScheduleView.swift */,
 				E788751A2652A47500FC21F3 /* ChatView.swift */,
 				E788751E2652A4D500FC21F3 /* AccountView.swift */,
@@ -116,14 +122,6 @@
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		E78875272653932500FC21F3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E788752F2653A89000FC21F3 /* TutorView */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E788752A2653A41300FC21F3 /* Utility */ = {
@@ -146,6 +144,30 @@
 				E78875342653D30C00FC21F3 /* SubjectGridView.swift */,
 			);
 			path = TutorView;
+			sourceTree = "<group>";
+		};
+		E788753C2653E8E500FC21F3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E788753D2653E90D00FC21F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E788753E2653E91A00FC21F3 /* TutorDetailView */,
+				E788752F2653A89000FC21F3 /* TutorView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E788753E2653E91A00FC21F3 /* TutorDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E788753F2653E95200FC21F3 /* HeadingView.swift */,
+			);
+			path = TutorDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,8 +249,10 @@
 				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
+				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
+				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
 				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
