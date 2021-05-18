@@ -15,6 +15,15 @@
 		E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788751C2652A4C900FC21F3 /* ScheduleView.swift */; };
 		E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788751E2652A4D500FC21F3 /* AccountView.swift */; };
 		E78875212652A52000FC21F3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875202652A52000FC21F3 /* MainView.swift */; };
+		E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875232652A9D000FC21F3 /* TutorModel.swift */; };
+		E78875292653934C00FC21F3 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875282653934B00FC21F3 /* CardView.swift */; };
+		E788752C2653A42700FC21F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788752B2653A42700FC21F3 /* Constant.swift */; };
+		E788752E2653A88800FC21F3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788752D2653A88800FC21F3 /* TitleView.swift */; };
+		E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875302653AA5B00FC21F3 /* CardGridView.swift */; };
+		E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875322653AD4800FC21F3 /* SubjectItemView.swift */; };
+		E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875342653D30C00FC21F3 /* SubjectGridView.swift */; };
+		E78875372653D38F00FC21F3 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875362653D38F00FC21F3 /* SectionView.swift */; };
+		E78875392653D97200FC21F3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875382653D97200FC21F3 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		E788751C2652A4C900FC21F3 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		E788751E2652A4D500FC21F3 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E78875202652A52000FC21F3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E78875232652A9D000FC21F3 /* TutorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorModel.swift; sourceTree = "<group>"; };
+		E78875282653934B00FC21F3 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E788752B2653A42700FC21F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		E788752D2653A88800FC21F3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		E78875302653AA5B00FC21F3 /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		E78875322653AD4800FC21F3 /* SubjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectItemView.swift; sourceTree = "<group>"; };
+		E78875342653D30C00FC21F3 /* SubjectGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectGridView.swift; sourceTree = "<group>"; };
+		E78875362653D38F00FC21F3 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		E78875382653D97200FC21F3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,9 @@
 			isa = PBXGroup;
 			children = (
 				E78875192652A43000FC21F3 /* App */,
+				E78875272653932500FC21F3 /* View */,
+				E78875222652A9A300FC21F3 /* Model */,
+				E788752A2653A41300FC21F3 /* Utility */,
 				E788750E2652A30200FC21F3 /* Assets.xcassets */,
 				E78875132652A30200FC21F3 /* Info.plist */,
 				E78875102652A30200FC21F3 /* Preview Content */,
@@ -87,6 +108,44 @@
 				E78875202652A52000FC21F3 /* MainView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		E78875222652A9A300FC21F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E78875232652A9D000FC21F3 /* TutorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E78875272653932500FC21F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E788752F2653A89000FC21F3 /* TutorView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E788752A2653A41300FC21F3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E788752B2653A42700FC21F3 /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		E788752F2653A89000FC21F3 /* TutorView */ = {
+			isa = PBXGroup;
+			children = (
+				E788752D2653A88800FC21F3 /* TitleView.swift */,
+				E78875382653D97200FC21F3 /* SearchBar.swift */,
+				E78875282653934B00FC21F3 /* CardView.swift */,
+				E78875302653AA5B00FC21F3 /* CardGridView.swift */,
+				E78875322653AD4800FC21F3 /* SubjectItemView.swift */,
+				E78875362653D38F00FC21F3 /* SectionView.swift */,
+				E78875342653D30C00FC21F3 /* SubjectGridView.swift */,
+			);
+			path = TutorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,12 +217,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
+				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
+				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
+				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
 				E78875212652A52000FC21F3 /* MainView.swift in Sources */,
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
+				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
+				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
+				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
+				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
+				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
