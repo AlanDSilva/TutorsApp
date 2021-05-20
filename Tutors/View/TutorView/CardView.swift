@@ -9,7 +9,9 @@ import SwiftUI
 
 struct CardView: View {
     //MARK: - properties
-    let tutor: Tutor
+    @ObservedObject var tutorVM: TutorViewModel
+    
+//    let tutor: Tutor
     
     //MARK: - body
     var body: some View {
@@ -18,15 +20,15 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: radius).stroke(colorGray)
             
             VStack {
-                Image(tutor.photoURL)
+                Image(tutorVM.tutor.photoURL)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
                 
-                Text(tutor.name)
+                Text(tutorVM.tutor.name)
                     .font(.title3)
                 
-                Text(tutor.subject)
+                Text(tutorVM.tutor.subject)
                     .font(.body)
                     .fontWeight(.light)
                 
@@ -48,13 +50,13 @@ struct CardView: View {
     }
 }
 
-struct CoverImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView(tutor: Tutor.data[2])
-            .previewLayout(.sizeThatFits)
-            .padding()
-            .background(colorBackground)
-            
-        
-    }
-}
+//struct CoverImageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardView(tutor: Tutor.data[2])
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//            .background(colorBackground)
+//
+//
+//    }
+//}

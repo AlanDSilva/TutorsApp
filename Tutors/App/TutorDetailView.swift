@@ -9,20 +9,21 @@ import SwiftUI
 
 struct TutorDetailView: View {
     //MARK: - properties
-    let tutor: Tutor
+    @ObservedObject var tutorVM: TutorViewModel
+//    let tutor: Tutor
     
     //MARK: - body
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 // intro video
-                Image(tutor.photoURL)
+                Image(tutorVM.tutor.photoURL)
                     .resizable()
                     .scaledToFit()
                 
                 // headline
                 HeadingView(headingImage: "info.circle", headingText: "Description")
-                Text(tutor.description)
+                Text(tutorVM.tutor.description)
                     .font(.body)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.accentColor)
@@ -30,7 +31,7 @@ struct TutorDetailView: View {
                 
                 
             }//: vstack
-            .navigationBarTitle(tutor.name)
+            .navigationBarTitle(tutorVM.tutor.name)
             .navigationBarItems(trailing:
                                     HStack(spacing: 20) {
                                         Button(action: {}, label: {
@@ -48,11 +49,11 @@ struct TutorDetailView: View {
     }
 }
 
-struct TutorDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            TutorDetailView(tutor: Tutor.data[5])
-        }
-        
-    }
-}
+//struct TutorDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            TutorDetailView(tutor: Tutor.data[5])
+//        }
+//
+//    }
+//}

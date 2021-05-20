@@ -11,6 +11,7 @@ struct TutorView: View {
     //MARK: - properties
     @State var searchText: String = ""
     
+    
     //MARK: - body
     var body: some View {
         NavigationView {

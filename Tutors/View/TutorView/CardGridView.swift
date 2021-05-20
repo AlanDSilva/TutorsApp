@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CardGridView: View {
     //MARK: - properties
+    @ObservedObject var tutorListVM = TutorListViewModel()
     let tutors: [Tutor]
     
     //MARK: - body
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: gridLayout, spacing: rowSpacing ,content: {
-                ForEach(tutors) {tutor in
-                    NavigationLink(destination: TutorDetailView(tutor: tutor)) {
-                        CardView(tutor: tutor)
+                ForEach(tutorListVM.tutorViewModels) {tutorVM in
+                    NavigationLink(destination: TutorDetailView(tutorVM: tutorVM)) {
+                        CardView(tutorVM: tutorVM)
                     }
                     
                 }//: loop
