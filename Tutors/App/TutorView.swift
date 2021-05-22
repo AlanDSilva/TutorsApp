@@ -27,9 +27,9 @@ struct TutorView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorView()
-            .background(colorBackground)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TutorView()
+//            .background(colorBackground)
+//    }
+//}

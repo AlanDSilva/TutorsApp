@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Tutor: Identifiable, Codable {
-    var id: UUID = UUID()
+    @DocumentID var id: String?
     let name: String
     let photoURL: String
     let subject: String

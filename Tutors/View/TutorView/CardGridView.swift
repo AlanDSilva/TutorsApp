@@ -28,9 +28,9 @@ struct CardGridView: View {
     }
 }
 
-struct CardGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardGridView(tutors: Tutor.data)
-            .background(colorBackground)
-    }
-}
+//struct CardGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardGridView(tutors: Tutor.data)
+//            .background(colorBackground)
+//    }
+//}
