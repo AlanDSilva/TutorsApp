@@ -33,6 +33,8 @@
 		E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875492656A88300FC21F3 /* TutorRepo.swift */; };
 		E788754C2656B79F00FC21F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754B2656B79F00FC21F3 /* ContentView.swift */; };
 		E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754D2658FA8B00FC21F3 /* ImagePicker.swift */; };
+		E788755126591F2100FC21F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755026591F2100FC21F3 /* LoginView.swift */; };
+		E78875532659261E00FC21F3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875522659261E00FC21F3 /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		E78875492656A88300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
 		E788754B2656B79F00FC21F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E788754D2658FA8B00FC21F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E788755026591F2100FC21F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E78875522659261E00FC21F3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 		E788753D2653E90D00FC21F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E788754F26591F0A00FC21F3 /* Account */,
 				E788753E2653E91A00FC21F3 /* TutorDetailView */,
 				E788752F2653A89000FC21F3 /* TutorView */,
 			);
@@ -209,6 +214,15 @@
 				E78875492656A88300FC21F3 /* TutorRepo.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		E788754F26591F0A00FC21F3 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E788755026591F2100FC21F3 /* LoginView.swift */,
+				E78875522659261E00FC21F3 /* SignupView.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		F700891B0044F8D2BC303650 /* Pods */ = {
@@ -338,6 +352,7 @@
 				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
 				E788754C2656B79F00FC21F3 /* ContentView.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
+				E788755126591F2100FC21F3 /* LoginView.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
@@ -345,6 +360,7 @@
 				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
 				E78875212652A52000FC21F3 /* MainView.swift in Sources */,
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
+				E78875532659261E00FC21F3 /* SignupView.swift in Sources */,
 				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
