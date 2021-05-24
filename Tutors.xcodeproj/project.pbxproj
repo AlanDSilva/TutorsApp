@@ -35,6 +35,8 @@
 		E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754D2658FA8B00FC21F3 /* ImagePicker.swift */; };
 		E788755126591F2100FC21F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755026591F2100FC21F3 /* LoginView.swift */; };
 		E78875532659261E00FC21F3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875522659261E00FC21F3 /* SignupView.swift */; };
+		E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887554265BD1FB00FC21F3 /* LoadingView.swift */; };
+		E7887557265BDD0D00FC21F3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		E788754D2658FA8B00FC21F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E788755026591F2100FC21F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E78875522659261E00FC21F3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		E7887554265BD1FB00FC21F3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 			children = (
 				E788754426569D1500FC21F3 /* TutorListViewModel.swift */,
 				E788754226569B9700FC21F3 /* TutorViewModel.swift */,
+				E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			children = (
 				E788755026591F2100FC21F3 /* LoginView.swift */,
 				E78875522659261E00FC21F3 /* SignupView.swift */,
+				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -366,11 +372,13 @@
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
+				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
 				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
+				E7887557265BDD0D00FC21F3 /* AuthViewModel.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

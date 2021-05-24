@@ -9,53 +9,59 @@ import SwiftUI
 
 struct LoginView: View {
     //MARK: - properties
-//    @State var email: String = ""
-//    @State var password: String = ""
-//    @State var isFullScreenCover: Bool = false
-    @StateObject var model = ModelData()
+    @ObservedObject var model: AuthViewModel
     
     //MARK: - body
     var body: some View {
-        VStack {
-            VStack(spacing: 20) {
-                CustomTextField(image: "person", placeholder: "Email", text: $model.email)
-                CustomTextField(image: "lock", placeholder: "Password", text: $model.password)
-            }
-            .padding(.top)
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
-                Text("Login")
-                    .padding(.vertical)
-                    .frame(width: UIScreen.main.bounds.width - 20)
-                    .background(colorGray)
-                    .clipShape(Capsule())
-            }
-            .padding(.top, 22)
-            
-            HStack(spacing: 12) {
-                Text("Don't have abd account?")
-                
-                Button(action: {
-                    model.isSignup = true
-                }) {
-                    Text("Sign up now")
-                        .fontWeight(.bold)
-                        .foregroundColor(colorGray)
+        ZStack {
+            VStack {
+                VStack(spacing: 20) {
+                    CustomTextField(image: "person", placeholder: "Email", text: $model.email)
+                    CustomTextField(image: "lock", placeholder: "Password", text: $model.password)
                 }
-                .padding(.vertical, 22)
-            }//: hstack
+                .padding(.top)
+                
+                Button(action: {model.login()}){
+                    Text("Login")
+                        .padding(.vertical)
+                        .frame(width: UIScreen.main.bounds.width - 20)
+                        .background(colorGray)
+                        .clipShape(Capsule())
+                }
+                .padding(.top, 22)
+                
+                HStack(spacing: 12) {
+                    Text("Don't have abd account?")
+                    
+                    Button(action: {
+                        model.isSignup = true
+                    }) {
+                        Text("Sign up now")
+                            .fontWeight(.bold)
+                            .foregroundColor(colorGray)
+                    }
+                    .padding(.vertical, 22)
+                }//: hstack
+                
+                Button(action: {model.resetPassword()}) {
+                    Text("Forget password?")
+                        .fontWeight(.bold)
+                }
+            } //: vstack
+            .fullScreenCover(isPresented: $model.isSignup, content: {
+                SignupView(model: model)
+            })
+            .alert(isPresented: $model.isLinkSend, content: {
+                Alert(title: Text("Message"), message: Text("Password Reset Link Has Been Sent"), dismissButton: .destructive(Text("OK")))
+            })
+            .alert(isPresented: $model.alert, content: {
+                Alert(title: Text("Message"), message: Text(model.alertMessage), dismissButton: .destructive(Text("OK")))
+            })
             
-            Button(action: {model.resetPassword()}) {
-                Text("Forget password?")
-                    .fontWeight(.bold)
+            if model.isLoading {
+                LoadingView()
             }
-        }
-        .fullScreenCover(isPresented: $model.isSignup, content: {
-            SignupView(model: model)
-        })
-        .alert(isPresented: $model.isLinkSend, content: {
-            Alert(title: Text("Message"), message: Text("Password Reset Link Has Been Sent"), dismissButton: .destructive(Text("OK")))
-        })
+        }//: zstack
     }
 }
 
@@ -92,45 +98,10 @@ struct CustomTextField: View {
     }
 }
 
-//MARK: - mvvm model
-class ModelData: ObservableObject {
-    @Published var email = ""
-    @Published var password = ""
-    @Published var isSignup = false
-    
-    @Published var email_signup = ""
-    @Published var password_signup = ""
-    @Published var reEnterPassword = ""
-    
-    @Published var resetEmail = ""
-    @Published var isLinkSend = false
-    
-    func resetPassword() {
-        let alert = UIAlertController(title: "Reser Password", message: "Enter yout e-mail to resert your Password", preferredStyle: .alert)
-        alert.addTextField { password in
-            password.placeholder = "Email"
-        }
-        
-        let proceed = UIAlertAction(title: "Reset", style: .default) { _ in
-            self.resetEmail = alert.textFields![0].text!
-            
-            self.isLinkSend.toggle()
-        }
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-        
-        alert.addAction(cancel)
-        alert.addAction(proceed)
-        
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
-    }
-    
-    
-}
-
-struct LoginView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        LoginView()
+//        
+//    }
+//}

@@ -9,11 +9,7 @@ import SwiftUI
 
 struct SignupView: View {
     //MARK: - properties
-//    @State var email: String = ""
-//    @State var password: String = ""
-//    @State var rePassword: String = ""
-//    @Binding var isSignup: Bool
-    @ObservedObject var model: ModelData
+    @ObservedObject var model: AuthViewModel
 
     
     //MARK: - body
@@ -27,7 +23,7 @@ struct SignupView: View {
                 }
                 .padding(.top)
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                Button(action: {model.signup()}){
                     Text("Signup")
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 20)
@@ -50,7 +46,21 @@ struct SignupView: View {
             }
             .padding(.trailing)
             .padding(.top, 10)
-        }
+            
+            if model.isLoading {
+                LoadingView()
+            }
+        }//: zstack
+        .alert(isPresented: $model.alert, content: {
+            Alert(title: Text("Message"), message: Text(model.alertMessage), dismissButton: .destructive(Text("OK"), action: {
+                if model.alertMessage == "Email Verification has been sent" {
+                    model.isSignup = false
+                    model.email_signup = ""
+                    model.password_signup = ""
+                    model.reEnterPassword = ""
+                }
+            }))
+        })
     }
 }
 
