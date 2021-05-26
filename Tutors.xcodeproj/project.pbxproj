@@ -41,6 +41,7 @@
 		E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755A265C2D5900FC21F3 /* AccountDetail.swift */; };
 		E788755F265D537800FC21F3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755E265D537800FC21F3 /* UserViewModel.swift */; };
 		E7887561265D7D8900FC21F3 /* AccountEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887560265D7D8800FC21F3 /* AccountEditView.swift */; };
+		E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887562265EA11500FC21F3 /* PhotoPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		E788755A265C2D5900FC21F3 /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 		E788755E265D537800FC21F3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		E7887560265D7D8800FC21F3 /* AccountEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditView.swift; sourceTree = "<group>"; };
+		E7887562265EA11500FC21F3 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
 				E788755A265C2D5900FC21F3 /* AccountDetail.swift */,
 				E7887560265D7D8800FC21F3 /* AccountEditView.swift */,
+				E7887562265EA11500FC21F3 /* PhotoPickerView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */,
 				E788755126591F2100FC21F3 /* LoginView.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
+				E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
 				E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */,

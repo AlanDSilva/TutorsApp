@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import Combine
 import FirebaseFirestore
 import FirebaseAuth
@@ -13,11 +14,17 @@ import FirebaseAuth
 class UserViewModel: ObservableObject {
     @Published var user: User = User(email: "")
     
+    @AppStorage("log_status") var status = false
+    
     private var db = Firestore.firestore()
     
     private var cancellables = Set<AnyCancellable>()
     
     init(){
+        loadUser()
+    }
+    
+    func loadUser() {
         if let currentUser = Auth.auth().currentUser {
             db.collection("users").document(currentUser.uid).addSnapshotListener { snapshot, error in
                 guard let document = snapshot else {
@@ -41,6 +48,14 @@ class UserViewModel: ObservableObject {
             } catch {
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }
+        }
+    }
+    
+    func logout() {
+        try! Auth.auth().signOut()
+        self.user = User(email: "")
+        withAnimation {
+            self.status = false
         }
     }
     

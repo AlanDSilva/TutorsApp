@@ -12,12 +12,10 @@ import FirebaseFirestoreSwift
 struct User: Identifiable, Codable {
     @DocumentID var id: String?
     var name: String
-    var photoURL: String
     let email: String
     
     init(email: String) {
         self.email = email
         self.name = ""
-        self.photoURL = ""
     }
 }

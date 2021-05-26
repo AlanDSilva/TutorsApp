@@ -11,7 +11,7 @@ import FirebaseStorage
 struct AccountDetailView: View {
     //MARK: - properties
     @ObservedObject var model: AuthViewModel
-    @StateObject var userVM = UserViewModel()
+    @ObservedObject var userVM: UserViewModel
     @State var isEditing: Bool = false
     @State var isPhotoPicker: Bool = false
     @State var image: UIImage?
@@ -37,24 +37,6 @@ struct AccountDetailView: View {
                 EditButton(image: "camera.circle", isShowing: $isPhotoPicker)
                     .padding()
             }//: zstack
-            .onAppear(perform: {
-                if userVM.user.email != "" {
-                    Storage.storage().reference().child("\(userVM.user.id)/temp").getData(maxSize: 5 * 1024 * 1024) { data, err in
-                        if let err = err {
-                            print("an error has occurred - \(err.localizedDescription)")
-                        } else {
-                            if let imageData = data{
-                                image = UIImage(data: imageData)
-                            } else {
-                                print("couldn't unwrap image data")
-                            }
-                        }
-                    }
-                    
-                }else {
-                    print("User has no profile picture")
-                }
-            })
             
             Text("Logged in as \(userVM.user.email)")
             HStack {
@@ -63,7 +45,9 @@ struct AccountDetailView: View {
             }
             
             
-            Button(action: {}){
+            Button(action: {
+                userVM.logout()
+            }){
                 Text("Logout")
                     .padding(.vertical)
                     .frame(width: UIScreen.main.bounds.width - 20)
@@ -71,14 +55,34 @@ struct AccountDetailView: View {
                     .clipShape(Capsule())
             }
             .padding(.top, 22)
-        }
+        }//: vstack
         .sheet(isPresented: $isEditing, content: {
             //            AccountEditView(user: userVM.user)
-            Text("Will be changed")
+            AccountEditView(user: userVM.user, userVM: userVM)
         })
         .sheet(isPresented: $isPhotoPicker, content: {
             //            AccountEditView(user: userVM.user)
-            Text("Will change photo")
+            PhotoPickerView(uid: userVM.user.id!)
+        })
+        .onAppear(perform: {
+            
+            print("View did appear: \(userVM.user)")
+            if let uid = userVM.user.id {
+                Storage.storage().reference().child("\(uid)/temp").getData(maxSize: 5 * 1024 * 1024) { data, err in
+                    if let err = err {
+                        print("an error has occurred - \(err.localizedDescription)")
+                    } else {
+                        if let imageData = data{
+                            image = UIImage(data: imageData)
+                        } else {
+                            print("couldn't unwrap image data")
+                        }
+                    }
+                }
+            }
+            else {
+                print("Error finding uid from user")
+            }
         })
         
     }

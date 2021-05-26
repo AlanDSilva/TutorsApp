@@ -10,6 +10,7 @@ import SwiftUI
 struct AccountEditView: View {
     //MARK: - properties
     @State var user: User
+    @ObservedObject var userVM: UserViewModel
     
     //MARK: - body
     var body: some View {
@@ -17,6 +18,13 @@ struct AccountEditView: View {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             
             CustomTextField(image: "person", placeholder: "Name", text: $user.name)
+            
+            Button {
+                userVM.updateUser(user)
+            } label: {
+                Text("Update")
+            }
+
         }
         
     }
