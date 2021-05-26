@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class AuthViewModel: ObservableObject {
     @Published var email = ""
@@ -136,6 +138,8 @@ class AuthViewModel: ObservableObject {
                 return
             }
             
+            self.addToFirestore(uid: (result?.user.uid)! , email: (result?.user.email)!)
+            
             result?.user.sendEmailVerification(completion: { err in
                 if err != nil {
                     self.alertMessage = err!.localizedDescription
@@ -165,6 +169,18 @@ class AuthViewModel: ObservableObject {
         email_signup = ""
         password_signup = ""
         reEnterPassword = ""
+    }
+    
+    func addToFirestore(uid: String, email: String) {
+        let db = Firestore.firestore()
+        let user = User(email: email)
+        
+        do {
+            let _ = try db.collection("users").document(uid).setData(from: user)
+        } catch {
+            print("Unable to add user to collection: \(error.localizedDescription)")
+        }
+        
     }
     
     

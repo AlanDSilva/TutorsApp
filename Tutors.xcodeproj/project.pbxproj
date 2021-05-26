@@ -37,6 +37,10 @@
 		E78875532659261E00FC21F3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875522659261E00FC21F3 /* SignupView.swift */; };
 		E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887554265BD1FB00FC21F3 /* LoadingView.swift */; };
 		E7887557265BDD0D00FC21F3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */; };
+		E7887559265C205E00FC21F3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887558265C205E00FC21F3 /* UserModel.swift */; };
+		E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755A265C2D5900FC21F3 /* AccountDetail.swift */; };
+		E788755F265D537800FC21F3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755E265D537800FC21F3 /* UserViewModel.swift */; };
+		E7887561265D7D8900FC21F3 /* AccountEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887560265D7D8800FC21F3 /* AccountEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		E78875522659261E00FC21F3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E7887554265BD1FB00FC21F3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		E7887558265C205E00FC21F3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E788755A265C2D5900FC21F3 /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
+		E788755E265D537800FC21F3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		E7887560265D7D8800FC21F3 /* AccountEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
+				E7887558265C205E00FC21F3 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 				E788754426569D1500FC21F3 /* TutorListViewModel.swift */,
 				E788754226569B9700FC21F3 /* TutorViewModel.swift */,
 				E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */,
+				E788755E265D537800FC21F3 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,6 +237,8 @@
 				E788755026591F2100FC21F3 /* LoginView.swift */,
 				E78875522659261E00FC21F3 /* SignupView.swift */,
 				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
+				E788755A265C2D5900FC21F3 /* AccountDetail.swift */,
+				E7887560265D7D8800FC21F3 /* AccountEditView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -358,6 +370,7 @@
 				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
 				E788754C2656B79F00FC21F3 /* ContentView.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
+				E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */,
 				E788755126591F2100FC21F3 /* LoginView.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
@@ -365,14 +378,17 @@
 				E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */,
 				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
 				E78875212652A52000FC21F3 /* MainView.swift in Sources */,
+				E788755F265D537800FC21F3 /* UserViewModel.swift in Sources */,
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
 				E78875532659261E00FC21F3 /* SignupView.swift in Sources */,
 				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
+				E7887559265C205E00FC21F3 /* UserModel.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
+				E7887561265D7D8900FC21F3 /* AccountEditView.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,

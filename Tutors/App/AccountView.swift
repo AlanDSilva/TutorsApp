@@ -17,12 +17,7 @@ struct AccountView: View {
     var body: some View {
         
         if status {
-            VStack {
-                Text("Logged in as \(Auth.auth().currentUser?.email ?? "")")
-                Button(action: {model.logout()}, label: {
-                    Text("Logout")
-                })
-            }
+            AccountDetailView(model: model)
         } else {
             LoginView(model: model)
         }
