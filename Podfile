@@ -12,5 +12,7 @@ target 'Tutors' do
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
+  
+  pod 'Resolver'
 
 end

@@ -31,17 +31,13 @@
 		E788754526569D1500FC21F3 /* TutorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754426569D1500FC21F3 /* TutorListViewModel.swift */; };
 		E78875472656A29700FC21F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E78875462656A29700FC21F3 /* GoogleService-Info.plist */; };
 		E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875492656A88300FC21F3 /* TutorRepo.swift */; };
-		E788754C2656B79F00FC21F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754B2656B79F00FC21F3 /* ContentView.swift */; };
 		E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754D2658FA8B00FC21F3 /* ImagePicker.swift */; };
-		E788755126591F2100FC21F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755026591F2100FC21F3 /* LoginView.swift */; };
-		E78875532659261E00FC21F3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875522659261E00FC21F3 /* SignupView.swift */; };
 		E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887554265BD1FB00FC21F3 /* LoadingView.swift */; };
-		E7887557265BDD0D00FC21F3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */; };
-		E7887559265C205E00FC21F3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887558265C205E00FC21F3 /* UserModel.swift */; };
-		E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755A265C2D5900FC21F3 /* AccountDetail.swift */; };
-		E788755F265D537800FC21F3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788755E265D537800FC21F3 /* UserViewModel.swift */; };
-		E7887561265D7D8900FC21F3 /* AccountEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887560265D7D8800FC21F3 /* AccountEditView.swift */; };
 		E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887562265EA11500FC21F3 /* PhotoPickerView.swift */; };
+		E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887565265FB52600FC21F3 /* AuthenticationService.swift */; };
+		E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887574266187BF00FC21F3 /* TutorsApp+Injection.swift */; };
+		E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875762661895300FC21F3 /* SettingsViewModel.swift */; };
+		E788757926618B3500FC21F3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788757826618B3500FC21F3 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,17 +69,13 @@
 		E788754426569D1500FC21F3 /* TutorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorListViewModel.swift; sourceTree = "<group>"; };
 		E78875462656A29700FC21F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E78875492656A88300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
-		E788754B2656B79F00FC21F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E788754D2658FA8B00FC21F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		E788755026591F2100FC21F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E78875522659261E00FC21F3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E7887554265BD1FB00FC21F3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		E7887558265C205E00FC21F3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		E788755A265C2D5900FC21F3 /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
-		E788755E265D537800FC21F3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		E7887560265D7D8800FC21F3 /* AccountEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountEditView.swift; sourceTree = "<group>"; };
 		E7887562265EA11500FC21F3 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
+		E7887565265FB52600FC21F3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		E7887574266187BF00FC21F3 /* TutorsApp+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TutorsApp+Injection.swift"; sourceTree = "<group>"; };
+		E78875762661895300FC21F3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		E788757826618B3500FC21F3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +122,9 @@
 				E78875192652A43000FC21F3 /* App */,
 				E788753D2653E90D00FC21F3 /* View */,
 				E788754126569B4400FC21F3 /* ViewModel */,
-				E78875482656A84E00FC21F3 /* Repository */,
 				E78875222652A9A300FC21F3 /* Model */,
+				E78875482656A84E00FC21F3 /* Repository */,
+				E78875732661831800FC21F3 /* Services */,
 				E788752A2653A41300FC21F3 /* Utility */,
 				E788750E2652A30200FC21F3 /* Assets.xcassets */,
 				E78875132652A30200FC21F3 /* Info.plist */,
@@ -153,13 +146,13 @@
 			isa = PBXGroup;
 			children = (
 				E788750A2652A2F300FC21F3 /* TutorsApp.swift */,
+				E7887574266187BF00FC21F3 /* TutorsApp+Injection.swift */,
+				E78875202652A52000FC21F3 /* MainView.swift */,
 				E788750C2652A2F300FC21F3 /* TutorView.swift */,
 				E788753A2653E15C00FC21F3 /* TutorDetailView.swift */,
 				E788751C2652A4C900FC21F3 /* ScheduleView.swift */,
 				E788751A2652A47500FC21F3 /* ChatView.swift */,
 				E788751E2652A4D500FC21F3 /* AccountView.swift */,
-				E78875202652A52000FC21F3 /* MainView.swift */,
-				E788754B2656B79F00FC21F3 /* ContentView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -168,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
-				E7887558265C205E00FC21F3 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,8 +211,7 @@
 			children = (
 				E788754426569D1500FC21F3 /* TutorListViewModel.swift */,
 				E788754226569B9700FC21F3 /* TutorViewModel.swift */,
-				E7887556265BDD0D00FC21F3 /* AuthViewModel.swift */,
-				E788755E265D537800FC21F3 /* UserViewModel.swift */,
+				E78875762661895300FC21F3 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,14 +227,19 @@
 		E788754F26591F0A00FC21F3 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				E788755026591F2100FC21F3 /* LoginView.swift */,
-				E78875522659261E00FC21F3 /* SignupView.swift */,
 				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
-				E788755A265C2D5900FC21F3 /* AccountDetail.swift */,
-				E7887560265D7D8800FC21F3 /* AccountEditView.swift */,
 				E7887562265EA11500FC21F3 /* PhotoPickerView.swift */,
+				E788757826618B3500FC21F3 /* SignInView.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		E78875732661831800FC21F3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E7887565265FB52600FC21F3 /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F700891B0044F8D2BC303650 /* Pods */ = {
@@ -371,35 +367,31 @@
 			files = (
 				E788754526569D1500FC21F3 /* TutorListViewModel.swift in Sources */,
 				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
-				E788754C2656B79F00FC21F3 /* ContentView.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
-				E788755B265C2D5900FC21F3 /* AccountDetail.swift in Sources */,
-				E788755126591F2100FC21F3 /* LoginView.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
+				E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */,
 				E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
+				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
 				E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */,
 				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
 				E78875212652A52000FC21F3 /* MainView.swift in Sources */,
-				E788755F265D537800FC21F3 /* UserViewModel.swift in Sources */,
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
-				E78875532659261E00FC21F3 /* SignupView.swift in Sources */,
 				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
-				E7887559265C205E00FC21F3 /* UserModel.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
-				E7887561265D7D8900FC21F3 /* AccountEditView.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
+				E788757926618B3500FC21F3 /* SignInView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
 				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
-				E7887557265BDD0D00FC21F3 /* AuthViewModel.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
+				E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

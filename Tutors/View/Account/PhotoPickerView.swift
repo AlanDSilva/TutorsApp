@@ -91,6 +91,21 @@ struct PhotoPickerView: View {
     }
 }
 
+func uploadImage(image: UIImage, uid: String) {
+    if let imageData = image.jpegData(compressionQuality: 0.6) {
+        let storage = Storage.storage()
+        storage.reference().child("\(uid)/temp").putData(imageData, metadata: nil) { _, err in
+            if let err = err {
+                print("an error has occurred - \(err.localizedDescription)")
+            } else {
+                print("image uploaded succesfully")
+            }
+        }
+    } else {
+        print("Couldn't unwrapp/cast image to data")
+    }
+}
+
 struct PhotoPickerView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoPickerView(uid: "temp")
