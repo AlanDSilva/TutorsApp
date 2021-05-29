@@ -19,51 +19,59 @@ struct AccountView: View {
     
     //MARK: - body
     var body: some View {
-        VStack {
-            ZStack(alignment: .bottomTrailing) {
-                if(image != nil) {
-                    Image(uiImage: image!)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                } else {
-                    Image(systemName: "timelapse")
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
+        NavigationView {
+            VStack {
+                ZStack(alignment: .bottomTrailing) {
+                    if(image != nil) {
+                        Image(uiImage: image!)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                    } else {
+                        Image(systemName: "timelapse")
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle())
+                    }
+                    
+                    Button(action: { showPhotoPicker.toggle() }) {
+                        Image(systemName: "camera.circle")
+                    }
                 }
                 
-                Button(action: { showPhotoPicker.toggle() }) {
-                    Image(systemName: "person.circle")
+                Text("This is an anonymous account")
+                
+                Text("UID: \(settingsViewModel.uid != "" ? settingsViewModel.uid : "[None]")")
+                HStack {
+                    Text("Username: \(settingsViewModel.displayName != "" ? settingsViewModel.displayName : "[None]")")
+                    Spacer()
+                    Button(action: { showEditDisplayName.toggle() }) {
+                        Image(systemName: "pencil.circle")
+                    }
                 }
-            }
-            
-            Text("This is an anonymous account")
-            
-            Text("UID: \(settingsViewModel.uid != "" ? settingsViewModel.uid : "[None]")")
-            HStack {
-                Text("Username: \(settingsViewModel.displayName != "" ? settingsViewModel.displayName : "[None]")")
                 Spacer()
-                Button(action: { showEditDisplayName.toggle() }) {
-                    Image(systemName: "pencil.circle")
+                NavigationLink(destination: TutorPageView()) {
+                    Text("Go to TutorPAge")
                 }
+                
+
             }
-            
-            
+            .padding()
+            .sheet(isPresented: self.$showSignInView) {
+                SignInView()
+            }
+            .sheet(isPresented: self.$showEditDisplayName) {
+                EditName(displayName: settingsViewModel.displayName, settingsViewModel: settingsViewModel)
+            }
+            .sheet(isPresented: self.$showPhotoPicker) {
+                PhotoPickerView(uid: settingsViewModel.uid)
+            }
+            .onAppear {
+                loadImage()
+            }
+            .navigationTitle("Settings")
         }
-        .padding()
-        .sheet(isPresented: self.$showSignInView) {
-            SignInView()
-        }
-        .sheet(isPresented: self.$showEditDisplayName) {
-            EditName(displayName: settingsViewModel.displayName, settingsViewModel: settingsViewModel)
-        }
-        .sheet(isPresented: self.$showPhotoPicker) {
-            PhotoPickerView(uid: settingsViewModel.uid)
-        }
-        .onAppear {
-            loadImage()
-        }
+        
     }
     
     //MARK: - methods

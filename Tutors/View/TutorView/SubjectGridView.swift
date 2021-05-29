@@ -19,9 +19,7 @@ struct SubjectGridView: View {
                     }
                 }
             })//: grid
-            .frame(height: 140)
-            .padding(.horizontal, rowSpacing)
-            .padding(.vertical, rowSpacing)
+            .frame(height: 130)
         }//: scroll
     }
 }

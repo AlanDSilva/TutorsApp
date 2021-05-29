@@ -13,27 +13,27 @@ struct SubjectItemView: View {
     
     //MARK: - body
     var body: some View {
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-            HStack(alignment: .center, spacing: 6) {
-                Image(systemName: "book")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20, alignment: .center)
-                    
-                Text(subject.uppercased())
-                    .fontWeight(.light)
-                
-                Spacer()
-            }//: hstack
-            .padding()
-            .background(Color.white.cornerRadius(12))
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color.gray, lineWidth: 1)
-            )
-        })//: Button
-        .foregroundColor(.gray)
+        
+        HStack(alignment: .center, spacing: 6) {
+            Image(systemName: "book")
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 15, height: 15, alignment: .center)
+            
+            Text(subject.uppercased())
+                .font(.footnote)
+                .fontWeight(.light)
+            
+            Spacer()
+        }//: hstack
+        .padding()
+        .background(Color.white.cornerRadius(12))
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(lineWidth: 1)
+        )
+        
     }
 }
 
