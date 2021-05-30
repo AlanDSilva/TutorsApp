@@ -29,7 +29,7 @@ struct TutorPageView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("Alan Da Silva")
+                    Text("Catty McCat")
                         .font(.title)
                     
                     TutorPageHeadingView(title: "Helsinki", image: "map.fill", isEditing: $isEditingLocation)
@@ -69,6 +69,9 @@ struct TutorPageView: View {
             Spacer()
             
         }//: vstack
+        .sheet(isPresented: $isEditingDescription, content: {
+            EditDescriptionView()
+        })
         
         
     }

@@ -20,7 +20,7 @@ struct TutorPageHeadingView: View {
             Text(title)
                 .font(.title3)
             Spacer()
-            Button(action: {}){
+            Button(action: {isEditing.toggle()}){
                 Image(systemName: image)
             }
         }
