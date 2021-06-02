@@ -46,6 +46,8 @@
 		E78875862663E55600FC21F3 /* EditDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875852663E55600FC21F3 /* EditDescriptionView.swift */; };
 		E78875882663ECFA00FC21F3 /* EditSubjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */; };
 		E788758A266650E800FC21F3 /* TutorPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887589266650E700FC21F3 /* TutorPageViewModel.swift */; };
+		E788758C2667A63500FC21F3 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788758B2667A63500FC21F3 /* ChatModel.swift */; };
+		E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788758D2667AACA00FC21F3 /* ChatRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		E78875852663E55600FC21F3 /* EditDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescriptionView.swift; sourceTree = "<group>"; };
 		E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectsView.swift; sourceTree = "<group>"; };
 		E7887589266650E700FC21F3 /* TutorPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorPageViewModel.swift; sourceTree = "<group>"; };
+		E788758B2667A63500FC21F3 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		E788758D2667AACA00FC21F3 /* ChatRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
+				E788758B2667A63500FC21F3 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				E78875492656A88300FC21F3 /* TutorRepo.swift */,
+				E788758D2667AACA00FC21F3 /* ChatRepo.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
+				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
 				E788757926618B3500FC21F3 /* SignInView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
@@ -432,6 +439,7 @@
 				E788757F2662609E00FC21F3 /* CircleImageView.swift in Sources */,
 				E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */,
 				E78875882663ECFA00FC21F3 /* EditSubjectsView.swift in Sources */,
+				E788758C2667A63500FC21F3 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,9 @@ import Resolver
 
 class TutorViewModel: ObservableObject, Identifiable {
     @Published var tutorRepo: TutorRepo = Resolver.resolve()
+    @Published var chatRepo: ChatRepo = Resolver.resolve()
     @Published var tutor: Tutor = Tutor()
+    
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -19,13 +21,9 @@ class TutorViewModel: ObservableObject, Identifiable {
         self.tutor = tutor
     }
     
-    init() {
-        tutorRepo.$tutor.map{ tutor in
-            tutor
-        }
-        .assign(to: \.tutor, on: self)
-        .store(in: &cancellables)
+    func startChat() {
+        print("Will start chat")
+        let chat = Chat(members: [self.tutor.id!])
+        chatRepo.addChat(chat)
     }
-    
-    
 }

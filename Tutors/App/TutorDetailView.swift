@@ -37,7 +37,7 @@ struct TutorDetailView: View {
                                         Button(action: {}, label: {
                                             Image(systemName: "message")
                                         })
-                                        Button(action: {}, label: {
+                                        Button(action: {tutorVM.startChat()}, label: {
                                             Image(systemName: "heart")
                                         })
                                     }
