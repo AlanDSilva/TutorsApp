@@ -54,6 +54,10 @@ struct AccountView: View {
                     Text("Go to TutorPAge")
                 }
                 
+                Button(action: {settingsViewModel.createTutor()}, label: {
+                    Text("Register as tutor")
+                })
+                
 
             }
             .padding()

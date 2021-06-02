@@ -19,7 +19,7 @@ struct TutorView: View {
                 SearchBar(text: $searchText)
                     .padding(.horizontal, 8)
                 
-                CardGridView(tutors: Tutor.data)
+                CardGridView()
             }
             .navigationBarTitle("Tutors")
         }

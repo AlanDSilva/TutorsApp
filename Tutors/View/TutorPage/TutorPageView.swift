@@ -10,9 +10,10 @@ import MapKit
 
 struct TutorPageView: View {
     //MARK: - properties
+    @ObservedObject var tutorVM = TutorPageViewModel()
     @State var isEditingLocation: Bool = false
     @State var isEditingDescription: Bool = false
-    @State var isEditingSubsects: Bool = false
+    @State var isEditingSubjects: Bool = false
     @State var isEditingVideo: Bool = false
     
     //MARK: - body
@@ -20,7 +21,7 @@ struct TutorPageView: View {
         VStack {
             MapView()
                 .ignoresSafeArea(edges: .top)
-                .frame(height: 200)
+                .frame(height: 100)
                 
             CircleImageView()
                 .offset(y: -100)
@@ -29,7 +30,7 @@ struct TutorPageView: View {
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("Catty McCat")
+                    Text(tutorVM.tutor.displayName)
                         .font(.title)
                     
                     TutorPageHeadingView(title: "Helsinki", image: "map.fill", isEditing: $isEditingLocation)
@@ -38,15 +39,15 @@ struct TutorPageView: View {
                     
                     Group {
                         TutorPageHeadingView(title: "Description", image: "pencil.circle.fill", isEditing: $isEditingDescription)
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque interdum rutrum sodales. Nullam mattis fermentum libero, non volutpat.")
+                        Text(tutorVM.tutor.description)
                             .font(.subheadline)
                     }
                     
                     Divider()
                     
                     Group {
-                        TutorPageHeadingView(title: "Subjects", image: "plus.circle.fill", isEditing: $isEditingSubsects)
-                        SubjectGridView()
+                        TutorPageHeadingView(title: "Subjects", image: "plus.circle.fill", isEditing: $isEditingSubjects)
+                        SubjectGridView(subjects: $tutorVM.tutor.subjects)
                     }
                     
                     Divider()
@@ -61,7 +62,6 @@ struct TutorPageView: View {
                                 .frame(width: 200, height: 200, alignment: .center)
                         }
                     }
-                    
                 }//: vstack
                 .padding()
             }
@@ -70,7 +70,10 @@ struct TutorPageView: View {
             
         }//: vstack
         .sheet(isPresented: $isEditingDescription, content: {
-            EditDescriptionView()
+            EditDescriptionView(description: $tutorVM.tutor.description)
+        })
+        .sheet(isPresented: $isEditingSubjects, content: {
+            EditSubjectsView(subjects: $tutorVM.tutor.subjects)
         })
         
         

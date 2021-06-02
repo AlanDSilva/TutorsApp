@@ -45,6 +45,7 @@
 		E78875842663E4E200FC21F3 /* EditLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875832663E4E200FC21F3 /* EditLocationView.swift */; };
 		E78875862663E55600FC21F3 /* EditDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875852663E55600FC21F3 /* EditDescriptionView.swift */; };
 		E78875882663ECFA00FC21F3 /* EditSubjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */; };
+		E788758A266650E800FC21F3 /* TutorPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887589266650E700FC21F3 /* TutorPageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E78875832663E4E200FC21F3 /* EditLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLocationView.swift; sourceTree = "<group>"; };
 		E78875852663E55600FC21F3 /* EditDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescriptionView.swift; sourceTree = "<group>"; };
 		E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSubjectsView.swift; sourceTree = "<group>"; };
+		E7887589266650E700FC21F3 /* TutorPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorPageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +199,6 @@
 				E78875302653AA5B00FC21F3 /* CardGridView.swift */,
 				E78875322653AD4800FC21F3 /* SubjectItemView.swift */,
 				E78875362653D38F00FC21F3 /* SectionView.swift */,
-				E78875342653D30C00FC21F3 /* SubjectGridView.swift */,
 			);
 			path = TutorView;
 			sourceTree = "<group>";
@@ -243,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				E788757826618B3500FC21F3 /* SignInView.swift */,
-				E788757A26625DA300FC21F3 /* TutorPageView.swift */,
 				E78875802662710A00FC21F3 /* TutorPageHeadingView.swift */,
 				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
 				E7887562265EA11500FC21F3 /* PhotoPickerView.swift */,
@@ -264,9 +264,12 @@
 		E78875822663E45200FC21F3 /* TutorPage */ = {
 			isa = PBXGroup;
 			children = (
+				E788757A26625DA300FC21F3 /* TutorPageView.swift */,
 				E78875832663E4E200FC21F3 /* EditLocationView.swift */,
 				E78875852663E55600FC21F3 /* EditDescriptionView.swift */,
 				E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */,
+				E7887589266650E700FC21F3 /* TutorPageViewModel.swift */,
+				E78875342653D30C00FC21F3 /* SubjectGridView.swift */,
 			);
 			path = TutorPage;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				E788757D2662607B00FC21F3 /* MapView.swift in Sources */,
 				E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
+				E788758A266650E800FC21F3 /* TutorPageViewModel.swift in Sources */,
 				E788757B26625DA300FC21F3 /* TutorPageView.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,

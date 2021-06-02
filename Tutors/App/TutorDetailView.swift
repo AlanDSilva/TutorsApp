@@ -17,7 +17,7 @@ struct TutorDetailView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 // intro video
-                Image(tutorVM.tutor.photoURL)
+                Image("cat6")
                     .resizable()
                     .scaledToFit()
                 
@@ -31,7 +31,7 @@ struct TutorDetailView: View {
                 
                 
             }//: vstack
-            .navigationBarTitle(tutorVM.tutor.name)
+            .navigationBarTitle(tutorVM.tutor.displayName)
             .navigationBarItems(trailing:
                                     HStack(spacing: 20) {
                                         Button(action: {}, label: {

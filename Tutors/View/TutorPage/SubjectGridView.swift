@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct SubjectGridView: View {
+    //MARK: - properties
+    @Binding var subjects: [String]
+    
+    //MARK: - body
     var body: some View {
         ScrollView(.horizontal) {
             LazyHGrid(rows: gridLayout, alignment: .center, spacing: columnSpacing, pinnedViews: /*@START_MENU_TOKEN@*/[]/*@END_MENU_TOKEN@*/, content: {
                 Section(
                     header: SectionView(rotateClockwise: false),
                     footer: SectionView(rotateClockwise: true)) {
-                    ForEach(0..<4) { subject in
-                        SubjectItemView(subject: "Music")
+                    ForEach(subjects, id: \.self) { subject in
+                        SubjectItemView(subject: subject)
                     }
                 }
             })//: grid
@@ -24,11 +28,11 @@ struct SubjectGridView: View {
     }
 }
 
-struct SubjectGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        SubjectGridView()
-            .previewLayout(.sizeThatFits)
-            .padding()
-            .background(colorBackground)
-    }
-}
+//struct SubjectGridView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SubjectGridView()
+//            .previewLayout(.sizeThatFits)
+//            .padding()
+//            .background(colorBackground)
+//    }
+//}

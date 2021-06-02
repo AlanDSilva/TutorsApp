@@ -7,9 +7,10 @@
 
 import Foundation
 import Combine
+import Resolver
 
 class TutorListViewModel: ObservableObject {
-    @Published var tutorRepo = TutorRepo()
+    @Published var tutorRepo: TutorRepo = Resolver.resolve()
     @Published var tutorViewModels = [TutorViewModel]()
     
     private var cancellables = Set<AnyCancellable>()
@@ -25,7 +26,7 @@ class TutorListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func addTutor(_ tutor: Tutor) {
+    func addTutor(_ tutor: Tutor) {
         tutorRepo.addTutor(tutor)
     }
     

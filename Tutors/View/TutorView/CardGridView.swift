@@ -10,7 +10,7 @@ import SwiftUI
 struct CardGridView: View {
     //MARK: - properties
     @ObservedObject var tutorListVM = TutorListViewModel()
-    let tutors: [Tutor]
+//    let tutors: [Tutor] = Tutor.data
     
     //MARK: - body
     var body: some View {
@@ -28,9 +28,9 @@ struct CardGridView: View {
     }
 }
 
-//struct CardGridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardGridView(tutors: Tutor.data)
-//            .background(colorBackground)
-//    }
-//}
+struct CardGridView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardGridView()
+            .background(colorBackground)
+    }
+}

@@ -1,23 +1,19 @@
 //
-//  TutorViewModel.swift
+//  TutorPageViewModel.swift
 //  Tutors
 //
-//  Created by Alan on 20.5.2021.
+//  Created by Alan on 1.6.2021.
 //
 
 import Foundation
-import Combine
 import Resolver
+import Combine
 
-class TutorViewModel: ObservableObject, Identifiable {
+class TutorPageViewModel: ObservableObject {
     @Published var tutorRepo: TutorRepo = Resolver.resolve()
     @Published var tutor: Tutor = Tutor()
     
     private var cancellables = Set<AnyCancellable>()
-    
-    init(tutor: Tutor) {
-        self.tutor = tutor
-    }
     
     init() {
         tutorRepo.$tutor.map{ tutor in
@@ -27,5 +23,8 @@ class TutorViewModel: ObservableObject, Identifiable {
         .store(in: &cancellables)
     }
     
+    func updateTutor(_ tutor: Tutor) {
+        tutorRepo.updateTutor(tutor)
+    }
     
 }

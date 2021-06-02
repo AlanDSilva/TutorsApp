@@ -20,17 +20,19 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: radius).stroke(colorGray)
             
             VStack {
-                Image(tutorVM.tutor.photoURL)
+                Image("cat6")
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle())
                 
-                Text(tutorVM.tutor.name)
+                Text(tutorVM.tutor.displayName)
                     .font(.title3)
                 
-                Text(tutorVM.tutor.subject)
-                    .font(.body)
-                    .fontWeight(.light)
+                ForEach(tutorVM.tutor.subjects, id: \.self) { item in
+                    Text(item)
+                        .font(.body)
+                        .fontWeight(.light)
+                }
                 
                 HStack {
                     Image(systemName: "star.fill")

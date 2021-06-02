@@ -19,6 +19,7 @@ class SettingsViewModel: ObservableObject {
     @Published var uid: String = ""
     
     @Published private var authenticationService: AuthenticationService = Resolver.resolve()
+    @Published private var tutorRepo: TutorRepo = Resolver.resolve()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -65,4 +66,9 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    func createTutor() {
+        let tutor = Tutor(displayName: displayName, description: "", subjects: [])
+        tutorRepo.addTutor(tutor)
+        print("New tutor added: \(tutor)")
+    }
 }

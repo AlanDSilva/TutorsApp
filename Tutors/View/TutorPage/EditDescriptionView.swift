@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditDescriptionView: View {
     //MARK: - properties
-    @State var description: String = "This is some editable text"
+    @Binding var description: String
     //MARK: - body
     
     var body: some View {
@@ -21,8 +21,8 @@ struct EditDescriptionView: View {
                 .foregroundColor(Color.gray)
                 .font(.custom("HelveticaNeue", size: 13))
                 .frame(height: 300)
-                .background(Color.red)
                 .padding()
+                .overlay(RoundedRectangle(cornerRadius: 25).stroke())
             
             
             Button(action: {}, label: {
@@ -35,6 +35,6 @@ struct EditDescriptionView: View {
 
 struct EditDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        EditDescriptionView()
+        EditDescriptionView(description: .constant(""))
     }
 }

@@ -12,5 +12,6 @@ extension Resolver: ResolverRegistering {
   public static func registerAllServices() {
     // register application components
     register { AuthenticationService() }.scope(.application)
+    register { FirestoreTutorRepo() as TutorRepo }.scope(.application)
   }
 }
