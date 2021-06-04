@@ -14,6 +14,7 @@ import Resolver
 
 class BaseChatRepo {
     @Published var chats = [Chat]()
+    @Published var currentChatId = ""
 }
 
 protocol ChatRepo {
@@ -65,20 +66,24 @@ class FirestoreChatRepo: BaseChatRepo, ChatRepo, ObservableObject {
     }
     
     func addChat(_ chat: Chat) {
-        let chatExists = chats.contains { item in
-            item.members.contains(chat.members[0])
+        if let foundChat = chats.first(where: { $0.members.contains(chat.members[0])}) {
+            print("Will move to chat \(foundChat.id ?? "")")
+            currentChatId = foundChat.id!
+        } else {
+            do {
+                var newChat = chat
+                newChat.members.append(self.userId)
+                print("Inside add chat with chat: \(chat)")
+                let new_chat = try db.collection(chatsPath).addDocument(from: newChat)
+                print("Will move to new chat \(new_chat.documentID)")
+                currentChatId = new_chat.documentID
+            }
+            catch {
+                fatalError("Unable to encode chat: \(error.localizedDescription).")
+            }
         }
-        print("Chat  exists: \(chatExists)")
         
-        do {
-            var newChat = chat
-            newChat.members.append(self.userId)
-            print("Inside add chat with chat: \(chat)")
-            let _ = try db.collection(chatsPath).addDocument(from: newChat)
-        }
-        catch {
-            fatalError("Unable to encode chat: \(error.localizedDescription).")
-        }
+        
     }
     
     func updateChat(_ chat: Chat) {
@@ -91,4 +96,5 @@ class FirestoreChatRepo: BaseChatRepo, ChatRepo, ObservableObject {
             }
         }
     }
+    
 }
