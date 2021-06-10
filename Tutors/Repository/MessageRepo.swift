@@ -16,16 +16,16 @@ class BaseMessageRepo {
     @Published var messages = [Message]()
 }
 
-protocol MessageRepo {
+protocol MessageRepo: BaseMessageRepo {
     func addMessage(_ message: Message)
 }
 
 class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     @Injected var authenticationService: AuthenticationService
-    @Injected var chatRepo: FirestoreChatRepo
     let db = Firestore.firestore()
     
     var chatId: String = "unknow"
+    var chatsPath: String = "chats"
     var messagesPath: String = "messages"
     var userId: String = "unknown"
     
@@ -35,12 +35,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     init(_ id: String) {
         super.init()
         
-        chatRepo.$currentChatId
-            .compactMap { chatId in
-                chatId
-            }
-            .assign(to: \.chatId, on: self)
-            .store(in: &cancellables)
+        chatId = id
         
         authenticationService.$user
             .compactMap { user in
@@ -62,7 +57,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
         if listenerRegistration != nil {
             listenerRegistration?.remove()
         }
-        listenerRegistration = db.collection(messagesPath).document(chatId).collection(messagesPath)
+        listenerRegistration = db.collection(chatsPath).document(chatId).collection(messagesPath)
             .addSnapshotListener { querySnapshot, error in
                 if let qSnapshot = querySnapshot {
                     self.messages = qSnapshot.documents.compactMap{ document in
@@ -76,7 +71,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
         do {
             var newMessage = message
             newMessage.userId = userId
-            let _ = try db.collection(messagesPath).document(chatId).collection(messagesPath).addDocument(from: newMessage)
+            let _ = try db.collection(chatsPath).document(chatId).collection(messagesPath).addDocument(from: newMessage)
             print("Message sent: \(newMessage)")
         }
         catch {

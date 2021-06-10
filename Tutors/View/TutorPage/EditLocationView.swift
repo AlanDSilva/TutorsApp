@@ -13,8 +13,8 @@ struct EditLocationView: View {
     }
 }
 
-struct EditLocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditLocationView()
-    }
-}
+//struct EditLocationView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditLocationView()
+//    }
+//}

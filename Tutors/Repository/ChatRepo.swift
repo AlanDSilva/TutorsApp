@@ -17,7 +17,7 @@ class BaseChatRepo {
     @Published var currentChatId = ""
 }
 
-protocol ChatRepo {
+protocol ChatRepo: BaseChatRepo {
     func addChat(_ chat: Chat)
     func updateChat(_ chat: Chat)
 }

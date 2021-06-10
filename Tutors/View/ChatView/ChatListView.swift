@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct ChatListView: View {
+    @ObservedObject var chatListVM = ChatListViewModel()
+    
     var body: some View {
-        
         List {
-            ForEach(0..<5) {_ in
-                ChatCellView()
+            ForEach(chatListVM.chatCellVMs) { chatCellVM in
+                    ChatCellView(chatCellVM: chatCellVM)
             }
         }
     }
 }
 
-struct ChatListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatListView()
-    }
-}
+//struct ChatListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatListView()
+//    }
+//}

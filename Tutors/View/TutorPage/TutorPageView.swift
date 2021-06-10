@@ -80,8 +80,8 @@ struct TutorPageView: View {
     }
 }
 
-struct TutorPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        TutorPageView()
-    }
-}
+//struct TutorPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TutorPageView()
+//    }
+//}

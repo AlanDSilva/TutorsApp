@@ -33,8 +33,8 @@ struct EditDescriptionView: View {
     }
 }
 
-struct EditDescriptionView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditDescriptionView(description: .constant(""))
-    }
-}
+//struct EditDescriptionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditDescriptionView(description: .constant(""))
+//    }
+//}

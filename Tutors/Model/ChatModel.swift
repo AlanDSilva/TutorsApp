@@ -15,7 +15,8 @@ struct Chat: Codable, Identifiable {
     var lastMessage: Message = Message()
 }
 
-struct Message: Codable {
+struct Message: Codable, Identifiable {
+    @DocumentID var id: String? = ""
     var message: String = ""
     @ServerTimestamp var createdTime: Timestamp?
     var userId: String = ""

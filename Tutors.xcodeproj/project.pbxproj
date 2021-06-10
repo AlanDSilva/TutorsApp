@@ -51,6 +51,11 @@
 		E7887590266A625B00FC21F3 /* MessageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788758F266A625B00FC21F3 /* MessageRepo.swift */; };
 		E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887592266A71A200FC21F3 /* ChatCellView.swift */; };
 		E7887595266A744400FC21F3 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887594266A744400FC21F3 /* ChatListView.swift */; };
+		E78875972670977800FC21F3 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875962670977700FC21F3 /* ChatListViewModel.swift */; };
+		E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875982670B60E00FC21F3 /* MessageListView.swift */; };
+		E788759B2670B84300FC21F3 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759A2670B84300FC21F3 /* MessageListViewModel.swift */; };
+		E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */; };
+		E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759E2671D1D100FC21F3 /* MessageCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +107,11 @@
 		E788758F266A625B00FC21F3 /* MessageRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepo.swift; sourceTree = "<group>"; };
 		E7887592266A71A200FC21F3 /* ChatCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellView.swift; sourceTree = "<group>"; };
 		E7887594266A744400FC21F3 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		E78875962670977700FC21F3 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		E78875982670B60E00FC21F3 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
+		E788759A2670B84300FC21F3 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
+		E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellViewModel.swift; sourceTree = "<group>"; };
+		E788759E2671D1D100FC21F3 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +302,12 @@
 			isa = PBXGroup;
 			children = (
 				E7887592266A71A200FC21F3 /* ChatCellView.swift */,
+				E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */,
 				E7887594266A744400FC21F3 /* ChatListView.swift */,
+				E78875962670977700FC21F3 /* ChatListViewModel.swift */,
+				E78875982670B60E00FC21F3 /* MessageListView.swift */,
+				E788759A2670B84300FC21F3 /* MessageListViewModel.swift */,
+				E788759E2671D1D100FC21F3 /* MessageCellView.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -423,11 +438,14 @@
 				E788754526569D1500FC21F3 /* TutorListViewModel.swift in Sources */,
 				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
+				E788759B2670B84300FC21F3 /* MessageListViewModel.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
 				E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */,
 				E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */,
 				E78875812662710A00FC21F3 /* TutorPageHeadingView.swift in Sources */,
+				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,
 				E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */,
+				E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
 				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
@@ -448,6 +466,7 @@
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E7887590266A625B00FC21F3 /* MessageRepo.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
+				E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */,
 				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
 				E788757926618B3500FC21F3 /* SignInView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
@@ -456,6 +475,7 @@
 				E78875862663E55600FC21F3 /* EditDescriptionView.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
 				E788757F2662609E00FC21F3 /* CircleImageView.swift in Sources */,
+				E78875972670977800FC21F3 /* ChatListViewModel.swift in Sources */,
 				E7887595266A744400FC21F3 /* ChatListView.swift in Sources */,
 				E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */,
 				E78875882663ECFA00FC21F3 /* EditSubjectsView.swift in Sources */,

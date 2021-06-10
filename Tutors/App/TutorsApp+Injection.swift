@@ -13,6 +13,6 @@ extension Resolver: ResolverRegistering {
     // register application components
     register { AuthenticationService() }.scope(.application)
     register { FirestoreTutorRepo() as TutorRepo }.scope(.application)
-    register { FirestoreChatRepo() as ChatRepo}.scope(.application)
+    register { FirestoreChatRepo() as ChatRepo }.scope(.application)
   }
 }
