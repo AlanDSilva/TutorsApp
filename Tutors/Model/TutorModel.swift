@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 struct Tutor: Identifiable, Codable {
     @DocumentID var id: String? = ""
     var displayName: String = ""
+    var photoURL: String = ""
     var description: String = ""
     var subjects: [String] = []
 }

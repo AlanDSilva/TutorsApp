@@ -14,5 +14,6 @@ extension Resolver: ResolverRegistering {
     register { AuthenticationService() }.scope(.application)
     register { FirestoreTutorRepo() as TutorRepo }.scope(.application)
     register { FirestoreChatRepo() as ChatRepo }.scope(.application)
+    register { FirestoreUserRepo() as UserRepo }.scope(.application)
   }
 }

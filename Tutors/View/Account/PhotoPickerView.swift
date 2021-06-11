@@ -7,10 +7,12 @@
 
 import SwiftUI
 import FirebaseStorage
+import Resolver
 
 struct PhotoPickerView: View {
     //MARK: - properties
     let uid: String
+    @ObservedObject var settingsViewModel: SettingsViewModel
     @State var showSheet = false
     @State var showImagePicker = false
     
@@ -32,20 +34,6 @@ struct PhotoPickerView: View {
                 
             }//: hstack
             .padding()
-            .onAppear(perform: {
-                Storage.storage().reference().child("\(uid)/temp").getData(maxSize: 5 * 1024 * 1024) { data, err in
-                    if let err = err {
-                        print("an error has occurred - \(err.localizedDescription)")
-                    } else {
-                        if let imageData = data{
-                            image = UIImage(data: imageData)
-                        } else {
-                            print("couldn't unwrap image data")
-                        }
-                    }
-                }
-            })
-            
             
             // Picks image
             Button(action: {
@@ -79,7 +67,8 @@ struct PhotoPickerView: View {
             //Uploads image
             Button(action: {
                 if let upload_image = image{
-                    uploadImage(image: upload_image, uid: uid)
+                    self.settingsViewModel.uploadProfileImage(image: upload_image)
+                    self.settingsViewModel.updatePhotoRL(photoURL: "\(uid)/profilePhoto")
                 } else {
                     print("couldn't upload image - no image present")
                 }
@@ -91,23 +80,8 @@ struct PhotoPickerView: View {
     }
 }
 
-func uploadImage(image: UIImage, uid: String) {
-    if let imageData = image.jpegData(compressionQuality: 0.6) {
-        let storage = Storage.storage()
-        storage.reference().child("\(uid)/temp").putData(imageData, metadata: nil) { _, err in
-            if let err = err {
-                print("an error has occurred - \(err.localizedDescription)")
-            } else {
-                print("image uploaded succesfully")
-            }
-        }
-    } else {
-        print("Couldn't unwrapp/cast image to data")
-    }
-}
-
-struct PhotoPickerView_Previews: PreviewProvider {
-    static var previews: some View {
-        PhotoPickerView(uid: "temp")
-    }
-}
+//struct PhotoPickerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PhotoPickerView(uid: "temp")
+//    }
+//}

@@ -37,7 +37,6 @@
 		E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887565265FB52600FC21F3 /* AuthenticationService.swift */; };
 		E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887574266187BF00FC21F3 /* TutorsApp+Injection.swift */; };
 		E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875762661895300FC21F3 /* SettingsViewModel.swift */; };
-		E788757926618B3500FC21F3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788757826618B3500FC21F3 /* SignInView.swift */; };
 		E788757B26625DA300FC21F3 /* TutorPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788757A26625DA300FC21F3 /* TutorPageView.swift */; };
 		E788757D2662607B00FC21F3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788757C2662607B00FC21F3 /* MapView.swift */; };
 		E788757F2662609E00FC21F3 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788757E2662609E00FC21F3 /* CircleImageView.swift */; };
@@ -56,6 +55,8 @@
 		E788759B2670B84300FC21F3 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759A2670B84300FC21F3 /* MessageListViewModel.swift */; };
 		E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */; };
 		E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759E2671D1D100FC21F3 /* MessageCellView.swift */; };
+		E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A02671DF4A00FC21F3 /* UserModel.swift */; };
+		E78875A32671E16500FC21F3 /* UserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A22671E16500FC21F3 /* UserRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +94,6 @@
 		E7887565265FB52600FC21F3 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		E7887574266187BF00FC21F3 /* TutorsApp+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TutorsApp+Injection.swift"; sourceTree = "<group>"; };
 		E78875762661895300FC21F3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		E788757826618B3500FC21F3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		E788757A26625DA300FC21F3 /* TutorPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorPageView.swift; sourceTree = "<group>"; };
 		E788757C2662607B00FC21F3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E788757E2662609E00FC21F3 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
@@ -112,6 +112,8 @@
 		E788759A2670B84300FC21F3 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
 		E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellViewModel.swift; sourceTree = "<group>"; };
 		E788759E2671D1D100FC21F3 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		E78875A02671DF4A00FC21F3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E78875A22671E16500FC21F3 /* UserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			children = (
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
 				E788758B2667A63500FC21F3 /* ChatModel.swift */,
+				E78875A02671DF4A00FC21F3 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				E78875492656A88300FC21F3 /* TutorRepo.swift */,
 				E788758D2667AACA00FC21F3 /* ChatRepo.swift */,
 				E788758F266A625B00FC21F3 /* MessageRepo.swift */,
+				E78875A22671E16500FC21F3 /* UserRepo.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -266,7 +270,6 @@
 		E788754F26591F0A00FC21F3 /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				E788757826618B3500FC21F3 /* SignInView.swift */,
 				E78875802662710A00FC21F3 /* TutorPageHeadingView.swift */,
 				E7887554265BD1FB00FC21F3 /* LoadingView.swift */,
 				E7887562265EA11500FC21F3 /* PhotoPickerView.swift */,
@@ -443,6 +446,7 @@
 				E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */,
 				E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */,
 				E78875812662710A00FC21F3 /* TutorPageHeadingView.swift in Sources */,
+				E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */,
 				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,
 				E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */,
 				E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */,
@@ -468,11 +472,11 @@
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */,
 				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
-				E788757926618B3500FC21F3 /* SignInView.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
 				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
 				E78875862663E55600FC21F3 /* EditDescriptionView.swift in Sources */,
+				E78875A32671E16500FC21F3 /* UserRepo.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
 				E788757F2662609E00FC21F3 /* CircleImageView.swift in Sources */,
 				E78875972670977800FC21F3 /* ChatListViewModel.swift in Sources */,

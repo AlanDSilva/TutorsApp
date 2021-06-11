@@ -22,8 +22,8 @@ struct AccountView: View {
         NavigationView {
             VStack {
                 ZStack(alignment: .bottomTrailing) {
-                    if(image != nil) {
-                        Image(uiImage: image!)
+                    if(settingsViewModel.image != nil) {
+                        Image(uiImage: settingsViewModel.image!)
                             .resizable()
                             .scaledToFit()
                             .clipShape(Circle())
@@ -41,9 +41,9 @@ struct AccountView: View {
                 
                 Text("This is an anonymous account")
                 
-                Text("UID: \(settingsViewModel.uid != "" ? settingsViewModel.uid : "[None]")")
+                Text("UID: \(settingsViewModel.cUser.id != "" ? settingsViewModel.cUser.id! : "[None]")")
                 HStack {
-                    Text("Username: \(settingsViewModel.displayName != "" ? settingsViewModel.displayName : "[None]")")
+                    Text("Username: \(settingsViewModel.cUser.displayName != "" ? settingsViewModel.cUser.displayName : "[None]")")
                     Spacer()
                     Button(action: { showEditDisplayName.toggle() }) {
                         Image(systemName: "pencil.circle")
@@ -62,34 +62,20 @@ struct AccountView: View {
             }
             .padding()
             .sheet(isPresented: self.$showSignInView) {
-                SignInView()
+                Text("Will sign in")
             }
             .sheet(isPresented: self.$showEditDisplayName) {
-                EditName(displayName: settingsViewModel.displayName, settingsViewModel: settingsViewModel)
+                EditName(displayName: settingsViewModel.cUser.displayName, settingsViewModel: settingsViewModel)
             }
             .sheet(isPresented: self.$showPhotoPicker) {
-                PhotoPickerView(uid: settingsViewModel.uid)
+                PhotoPickerView(uid: settingsViewModel.cUser.id!, settingsViewModel: settingsViewModel, image: settingsViewModel.image)
             }
             .onAppear {
-                loadImage()
-            }
-            .navigationTitle("Settings")
-        }
-        
-    }
-    
-    //MARK: - methods
-    func loadImage() {
-        Storage.storage().reference().child("\(settingsViewModel.uid)/temp").getData(maxSize: 5 * 1024 * 1024) { data, err in
-            if let err = err {
-                print("an error has occurred - \(err.localizedDescription)")
-            } else {
-                if let imageData = data{
-                    image = UIImage(data: imageData)
-                } else {
-                    print("couldn't unwrap image data")
+                if settingsViewModel.cUser.photoURL != "" {
+                    settingsViewModel.loadImage()
                 }
             }
+            .navigationTitle("Settings")
         }
     }
     
@@ -98,7 +84,7 @@ struct AccountView: View {
     }
     
     func logout() {
-        self.settingsViewModel.logout()
+        print("Will log out")
     }
     
 }
