@@ -23,7 +23,23 @@ class TutorPageViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    func updateTutor(_ tutor: Tutor) {
+    func registerTutor() {
+        tutorRepo.createTutor()
+    }
+    
+    func removeTutor() {
+        tutorRepo.deleteTutor()
+    }
+    
+    func updateDescription(with description: String){
+        var tutor = self.tutor
+        tutor.description = description
+        tutorRepo.updateTutor(tutor)
+    }
+    
+    func updateSubjects(with subjects: [String]) {
+        var tutor = self.tutor
+        tutor.subjects = subjects
         tutorRepo.updateTutor(tutor)
     }
     

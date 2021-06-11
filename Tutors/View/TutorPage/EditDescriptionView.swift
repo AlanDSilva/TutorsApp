@@ -9,9 +9,10 @@ import SwiftUI
 
 struct EditDescriptionView: View {
     //MARK: - properties
-    @Binding var description: String
-    //MARK: - body
+    @State var description: String
+    @ObservedObject var tutorVM: TutorPageViewModel
     
+    //MARK: - body
     var body: some View {
         VStack(spacing: 20) {
             Text("Description")
@@ -25,7 +26,9 @@ struct EditDescriptionView: View {
                 .overlay(RoundedRectangle(cornerRadius: 25).stroke())
             
             
-            Button(action: {}, label: {
+            Button(action: {
+                tutorVM.updateDescription(with: description)
+            }, label: {
                 Text("Save")
             })
         }

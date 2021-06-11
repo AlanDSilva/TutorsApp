@@ -10,13 +10,13 @@ import Combine
 import Resolver
 
 class TutorListViewModel: ObservableObject {
-    @Published var tutorRepo: TutorRepo = Resolver.resolve()
+    @Published var tutorsRepo: TutorsRepo = Resolver.resolve()
     @Published var tutorViewModels = [TutorViewModel]()
     
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        tutorRepo.$tutors
+        tutorsRepo.$tutors
             .map { tutors in
                 tutors.map { tutor in
                     TutorViewModel(tutor: tutor)
@@ -27,7 +27,7 @@ class TutorListViewModel: ObservableObject {
     }
     
     func addTutor(_ tutor: Tutor) {
-        tutorRepo.addTutor(tutor)
+        print("Will make favorite")
     }
     
  }

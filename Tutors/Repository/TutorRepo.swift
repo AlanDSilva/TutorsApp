@@ -1,8 +1,8 @@
 //
-//  TutorRepository.swift
+//  TutorRepo.swift
 //  Tutors
 //
-//  Created by Alan on 20.5.2021.
+//  Created by Alan on 11.6.2021.
 //
 
 import Foundation
@@ -13,23 +13,24 @@ import Combine
 import Resolver
 
 class BaseTutorRepo {
-    @Published var tutors = [Tutor]()
-    @Published var tutor: Tutor = Tutor()
+    @Published var tutor = Tutor()
 }
 
 protocol TutorRepo: BaseTutorRepo {
-    func fetchTutor()
-    func addTutor(_ tutor: Tutor)
+    func createTutor()
+    func deleteTutor()
     func updateTutor(_ tutor: Tutor)
 }
 
 
 class FirestoreTutorRepo: BaseTutorRepo, TutorRepo, ObservableObject {
     @Injected var authenticationService: AuthenticationService
+    @Injected var userRepo: UserRepo
     let db = Firestore.firestore()
     
     var tutorsPath: String = "tutors"
     var userId: String = "unknown"
+    var user: CUser = CUser()
     
     private var listenerRegistration: ListenerRegistration?
     private var cancellables = Set<AnyCancellable>()
@@ -49,9 +50,14 @@ class FirestoreTutorRepo: BaseTutorRepo, TutorRepo, ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] user in
                 self?.loadData()
-//                self?.fetchTutor()
-//                print("The user id is \(self?.userId ?? "[None]")")
             }
+            .store(in: &cancellables)
+        
+        userRepo.$user
+            .map{ user in
+                user
+            }
+            .assign(to: \.user, on: self)
             .store(in: &cancellables)
     }
     
@@ -60,52 +66,47 @@ class FirestoreTutorRepo: BaseTutorRepo, TutorRepo, ObservableObject {
         if listenerRegistration != nil {
             listenerRegistration?.remove()
         }
-        listenerRegistration = db.collection(tutorsPath)
-            .addSnapshotListener { querySnapshot, error in
-                if let qSnapshot = querySnapshot {
-                    self.tutors = qSnapshot.documents.compactMap{ document in
-                        try? document.data(as: Tutor.self)
-                    }
-                    self.fetchTutor()
+        listenerRegistration = db.collection(tutorsPath).document(userId)
+            .addSnapshotListener { docSnapshot, error in
+                guard let document = docSnapshot else {
+                    print("Error fetching TUTOR document: \(error!.localizedDescription)")
+                    return
                 }
+                guard let data = document.data() else {
+                    print("TUTOR document data was empty for the user \(self.user)")
+                    return
+                }
+                print("Current TUTOR data: \(data)")
+                self.tutor = try! document.data(as: Tutor.self)!
             }
     }
     
-    func fetchTutor() {
-        print("Fetching tutor with id: \(userId)")
-        db.collection(tutorsPath).document(userId)
-            .getDocument { snapshot, err in
-                if let document = snapshot, document.exists {
-                    print("Document exists!")
-                    self.tutor = try! document.data(as: Tutor.self)!
-                }else {
-                    print("Document does not exist")
-                }
-            }
-    }
-    
-    
-    func addTutor(_ tutor: Tutor) {
+    func createTutor() {
+        print("Will create tutor")
         do {
-            try db.collection("tutors").document(userId).setData(from: tutor)
-        } catch {
-            fatalError("Unable to encode task: \(tutor)")
+            try self.db.collection(self.tutorsPath).document(self.userId).setData(from: Tutor(displayName: user.displayName, photoURL: user.photoURL))
+        } catch let error {
+            print("Error writing tutor to Firestore: \(error)")
         }
     }
     
     func updateTutor(_ tutor: Tutor) {
-        if let tutorID = tutor.id {
-            do {
-                try db.collection(tutorsPath).document(tutorID).setData(from: tutor)
-            }
-            catch {
-                fatalError("Unable to encode task: \(error.localizedDescription).")
+        print("Will update tutor")
+        do {
+            try self.db.collection(self.tutorsPath).document(self.userId).setData(from: tutor)
+        } catch let error {
+            print("Error updating tutor to Firestore: \(error)")
+        }
+    }
+    
+    func deleteTutor() {
+        db.collection(tutorsPath).document(userId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
             }
         }
     }
     
-    
 }
-
-
-

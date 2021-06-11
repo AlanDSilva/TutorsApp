@@ -9,8 +9,9 @@ import SwiftUI
 
 struct EditSubjectsView: View {
     //MARK: - properties
-    @Binding var subjects: [String]
+    @State var subjects: [String]
     @State var isAddingItem: Bool = false
+    @ObservedObject var tutorVM: TutorPageViewModel
     
     //MARK: - body
     var body: some View {
@@ -29,7 +30,7 @@ struct EditSubjectsView: View {
             .frame(height: 300)
             
             if isAddingItem {
-                NewSubjectView(isAddingItem: $isAddingItem)
+                NewSubjectView(isAddingItem: $isAddingItem, subjects: $subjects)
                     .padding()
             } else {
                 Button(action: {isAddingItem.toggle()}, label: {
@@ -37,6 +38,12 @@ struct EditSubjectsView: View {
                         .font(.title)
                 })
                 .padding(.horizontal)
+                
+                Button(action: {
+                    tutorVM.updateSubjects(with: subjects)
+                }, label: {
+                    Text("Save")
+                })
             }
             
             
@@ -48,6 +55,7 @@ struct EditSubjectsView: View {
 struct NewSubjectView: View {
     @Binding var isAddingItem: Bool
     @State var newSubject: String = ""
+    @Binding var subjects: [String]
     var body: some View {
         VStack {
             TextField("Enter new subject", text: $newSubject)
@@ -58,8 +66,12 @@ struct NewSubjectView: View {
                     Text("Cancel")
                 })
                 Spacer()
-                Button(action: {isAddingItem.toggle()}, label: {
-                    Text("Save")
+                Button(action: {
+                    subjects.append(newSubject)
+                        isAddingItem.toggle()
+                    
+                }, label: {
+                    Text("Add")
                 })
             }//: hstack
             .font(.title2)
@@ -68,8 +80,8 @@ struct NewSubjectView: View {
     }
 }
 
-struct EditSubjectsView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditSubjectsView(subjects: .constant(["English", "Portuguese", "Finnish"]))
-    }
-}
+//struct EditSubjectsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditSubjectsView(subjects: ["English", "Portuguese", "Finnish"], tutorVM: <#TutorPageViewModel#>)
+//    }
+//}

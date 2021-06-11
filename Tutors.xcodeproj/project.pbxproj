@@ -30,7 +30,7 @@
 		E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754226569B9700FC21F3 /* TutorViewModel.swift */; };
 		E788754526569D1500FC21F3 /* TutorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754426569D1500FC21F3 /* TutorListViewModel.swift */; };
 		E78875472656A29700FC21F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E78875462656A29700FC21F3 /* GoogleService-Info.plist */; };
-		E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875492656A88300FC21F3 /* TutorRepo.swift */; };
+		E788754A2656A88300FC21F3 /* TutorsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875492656A88300FC21F3 /* TutorsRepo.swift */; };
 		E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754D2658FA8B00FC21F3 /* ImagePicker.swift */; };
 		E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887554265BD1FB00FC21F3 /* LoadingView.swift */; };
 		E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7887562265EA11500FC21F3 /* PhotoPickerView.swift */; };
@@ -57,6 +57,7 @@
 		E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788759E2671D1D100FC21F3 /* MessageCellView.swift */; };
 		E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A02671DF4A00FC21F3 /* UserModel.swift */; };
 		E78875A32671E16500FC21F3 /* UserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A22671E16500FC21F3 /* UserRepo.swift */; };
+		E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A42673340300FC21F3 /* TutorRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +88,7 @@
 		E788754226569B9700FC21F3 /* TutorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorViewModel.swift; sourceTree = "<group>"; };
 		E788754426569D1500FC21F3 /* TutorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorListViewModel.swift; sourceTree = "<group>"; };
 		E78875462656A29700FC21F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E78875492656A88300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
+		E78875492656A88300FC21F3 /* TutorsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorsRepo.swift; sourceTree = "<group>"; };
 		E788754D2658FA8B00FC21F3 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E7887554265BD1FB00FC21F3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		E7887562265EA11500FC21F3 /* PhotoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerView.swift; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 		E788759E2671D1D100FC21F3 /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
 		E78875A02671DF4A00FC21F3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E78875A22671E16500FC21F3 /* UserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepo.swift; sourceTree = "<group>"; };
+		E78875A42673340300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +261,8 @@
 		E78875482656A84E00FC21F3 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				E78875492656A88300FC21F3 /* TutorRepo.swift */,
+				E78875492656A88300FC21F3 /* TutorsRepo.swift */,
+				E78875A42673340300FC21F3 /* TutorRepo.swift */,
 				E788758D2667AACA00FC21F3 /* ChatRepo.swift */,
 				E788758F266A625B00FC21F3 /* MessageRepo.swift */,
 				E78875A22671E16500FC21F3 /* UserRepo.swift */,
@@ -291,12 +294,12 @@
 			isa = PBXGroup;
 			children = (
 				E788757A26625DA300FC21F3 /* TutorPageView.swift */,
+				E7887589266650E700FC21F3 /* TutorPageViewModel.swift */,
 				E78875832663E4E200FC21F3 /* EditLocationView.swift */,
 				E78875852663E55600FC21F3 /* EditDescriptionView.swift */,
 				E78875872663ECFA00FC21F3 /* EditSubjectsView.swift */,
 				E78875342653D30C00FC21F3 /* SubjectGridView.swift */,
 				E78875322653AD4800FC21F3 /* SubjectItemView.swift */,
-				E7887589266650E700FC21F3 /* TutorPageViewModel.swift */,
 			);
 			path = TutorPage;
 			sourceTree = "<group>";
@@ -460,7 +463,7 @@
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
 				E78875292653934C00FC21F3 /* CardView.swift in Sources */,
 				E788757D2662607B00FC21F3 /* MapView.swift in Sources */,
-				E788754A2656A88300FC21F3 /* TutorRepo.swift in Sources */,
+				E788754A2656A88300FC21F3 /* TutorsRepo.swift in Sources */,
 				E788751B2652A47500FC21F3 /* ChatView.swift in Sources */,
 				E788758A266650E800FC21F3 /* TutorPageViewModel.swift in Sources */,
 				E788757B26625DA300FC21F3 /* TutorPageView.swift in Sources */,
@@ -472,6 +475,7 @@
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */,
 				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
+				E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
 				E788752E2653A88800FC21F3 /* TitleView.swift in Sources */,
