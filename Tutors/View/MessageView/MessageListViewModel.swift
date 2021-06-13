@@ -10,17 +10,19 @@ import Combine
 
 class MessageListViewModel: ObservableObject {
     @Published var messageRepo: FirestoreMessageRepo
-    @Published var messages = [Message]()
+    @Published var messageCellVMs = [MessageCellViewModel]()
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(_ id: String) {
-        messageRepo = FirestoreMessageRepo(id)
+    init(_ uId: String) {
+        messageRepo = FirestoreMessageRepo(uId)
         messageRepo.$messages
             .map { messages in
-                messages
+                messages.map { message in
+                    MessageCellViewModel(message: message)
+                }
             }
-            .assign(to: \.messages, on: self)
+            .assign(to: \.messageCellVMs, on: self)
             .store(in: &cancellables)
     }
     

@@ -37,9 +37,9 @@ struct TutorDetailView: View {
                                         Button(action: {}, label: {
                                             Image(systemName: "message")
                                         })
-                                        Button(action: {tutorVM.startChat()}, label: {
-                                            Image(systemName: "heart")
-                                        })
+                                        NavigationLink(destination: MessageView(uId: tutorVM.tutor.id!)) {
+                                                Image(systemName: "heart")
+                                        }
                                     }
                                     .font(.title2)
             )

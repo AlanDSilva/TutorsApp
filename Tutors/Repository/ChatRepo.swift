@@ -14,11 +14,12 @@ import Resolver
 
 class BaseChatRepo {
     @Published var chats = [Chat]()
-    @Published var currentChatId = ""
+//    @Published var currentChatId = ""
 }
 
 protocol ChatRepo: BaseChatRepo {
-    func addChat(_ chat: Chat)
+    func startChat(with id: String) -> String
+    func otherUID(from chat: Chat) -> String
     func updateChat(_ chat: Chat)
 }
 
@@ -65,25 +66,29 @@ class FirestoreChatRepo: BaseChatRepo, ChatRepo, ObservableObject {
             }
     }
     
-    func addChat(_ chat: Chat) {
-        if let foundChat = chats.first(where: { $0.members.contains(chat.members[0])}) {
+    func startChat(with id: String) -> String {
+        if let foundChat = chats.first(where: { $0.members.contains(id)}) {
             print("Will move to chat \(foundChat.id ?? "")")
-            currentChatId = foundChat.id!
+            return foundChat.id!
         } else {
+            print("Will create a chat")
             do {
-                var newChat = chat
+                var newChat = Chat()
                 newChat.members.append(self.userId)
-                print("Inside add chat with chat: \(chat)")
+                newChat.members.append(id)
+                print("Creating new chat: \(newChat)")
                 let new_chat = try db.collection(chatsPath).addDocument(from: newChat)
                 print("Will move to new chat \(new_chat.documentID)")
-                currentChatId = new_chat.documentID
+                return new_chat.documentID
             }
             catch {
                 fatalError("Unable to encode chat: \(error.localizedDescription).")
             }
         }
-        
-        
+    }
+    
+    func otherUID(from chat: Chat) -> String {
+        chat.members.first { $0 != userId } ?? ""
     }
     
     func updateChat(_ chat: Chat) {

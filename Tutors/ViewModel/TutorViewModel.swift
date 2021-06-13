@@ -23,7 +23,6 @@ class TutorViewModel: ObservableObject, Identifiable {
     
     func startChat() {
         print("Will start chat")
-        let chat = Chat(members: [self.tutor.id!])
-        chatRepo.addChat(chat)
+        chatRepo.startChat(with: tutor.id!)
     }
 }

@@ -13,7 +13,9 @@ struct ChatListView: View {
     var body: some View {
         List {
             ForEach(chatListVM.chatCellVMs) { chatCellVM in
+                NavigationLink(destination: MessageView(uId: chatCellVM.uId)) {
                     ChatCellView(chatCellVM: chatCellVM)
+                }
             }
         }
     }

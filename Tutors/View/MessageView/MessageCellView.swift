@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct MessageCellView: View {
-    var message: Message
+    var messageCellVM: MessageCellViewModel
     
     var body: some View {
-            LeftMessageCellView(message: message)
+        if messageCellVM.position {
+            RightMessageCellView(message: messageCellVM.message)
+        } else {
+            LeftMessageCellView(message: messageCellVM.message)
+        }
+        
     }
 }
 

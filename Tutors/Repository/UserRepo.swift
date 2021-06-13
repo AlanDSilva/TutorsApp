@@ -18,6 +18,7 @@ class BaseUserRepo {
 
 protocol UserRepo: BaseUserRepo {
     func updateUser(_ user: CUser)
+    func getUser(with userID: String, completion: @escaping (CUser) -> ())
 }
 
 class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
@@ -52,6 +53,7 @@ class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
             .store(in: &cancellables)
     }
     
+    
     func loadData() {
         if listenerRegistration != nil {
             listenerRegistration?.remove()
@@ -76,14 +78,37 @@ class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
             }
     }
     
-    func updateUser(_ user: CUser) {
-        do {
-            try db.collection(usersPath).document(userId).setData(from: user)
-        }
-        catch {
-            fatalError("Unable to encode task: \(error.localizedDescription).")
+    func getUser(with userID: String, completion: @escaping (CUser) -> ()) {
+        print("Will get user with id: \(userID)")
+        var result = CUser()
+        let docRef = db.collection(usersPath).document(userID)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                do {
+                    result = try document.data(as: CUser.self)!
+                    print("The user would be \(result)")
+                    completion(result)
+                } catch {
+                    print(error)
+                    completion(result)
+                }
+            } else {
+                print("Document does not exist")
+                completion(result)
+            }
         }
     }
-    
-    
-}
+        
+        func updateUser(_ user: CUser) {
+            do {
+                try db.collection(usersPath).document(userId).setData(from: user)
+            }
+            catch {
+                fatalError("Unable to encode task: \(error.localizedDescription).")
+            }
+        }
+        
+        
+    }
+

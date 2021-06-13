@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23C410B861E5A67EF29762FB /* Pods_Tutors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06466CE890AA79AFF4DF935D /* Pods_Tutors.framework */; };
+		E716B4672675D7C00027EA17 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716B4662675D7C00027EA17 /* MessageView.swift */; };
+		E716B46A2675E5300027EA17 /* MessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E716B4692675E5300027EA17 /* MessageCellViewModel.swift */; };
 		E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788750A2652A2F300FC21F3 /* TutorsApp.swift */; };
 		E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788750C2652A2F300FC21F3 /* TutorView.swift */; };
 		E788750F2652A30200FC21F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E788750E2652A30200FC21F3 /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		06466CE890AA79AFF4DF935D /* Pods_Tutors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tutors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBA24142587B369B66C503C /* Pods-Tutors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutors.release.xcconfig"; path = "Target Support Files/Pods-Tutors/Pods-Tutors.release.xcconfig"; sourceTree = "<group>"; };
 		E4B7386E1D83C1DB0D5B04A7 /* Pods-Tutors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tutors.debug.xcconfig"; path = "Target Support Files/Pods-Tutors/Pods-Tutors.debug.xcconfig"; sourceTree = "<group>"; };
+		E716B4662675D7C00027EA17 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		E716B4692675E5300027EA17 /* MessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModel.swift; sourceTree = "<group>"; };
 		E78875072652A2F300FC21F3 /* Tutors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E788750A2652A2F300FC21F3 /* TutorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorsApp.swift; sourceTree = "<group>"; };
 		E788750C2652A2F300FC21F3 /* TutorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E716B4682675D94C0027EA17 /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				E78875982670B60E00FC21F3 /* MessageListView.swift */,
+				E788759A2670B84300FC21F3 /* MessageListViewModel.swift */,
+				E788759E2671D1D100FC21F3 /* MessageCellView.swift */,
+				E716B4692675E5300027EA17 /* MessageCellViewModel.swift */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
 		E78874FE2652A2F300FC21F3 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +208,7 @@
 				E788751C2652A4C900FC21F3 /* ScheduleView.swift */,
 				E788751A2652A47500FC21F3 /* ChatView.swift */,
 				E788751E2652A4D500FC21F3 /* AccountView.swift */,
+				E716B4662675D7C00027EA17 /* MessageView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -231,6 +247,7 @@
 		E788753D2653E90D00FC21F3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E716B4682675D94C0027EA17 /* MessageView */,
 				E7887591266A6F5E00FC21F3 /* ChatView */,
 				E78875822663E45200FC21F3 /* TutorPage */,
 				E788754F26591F0A00FC21F3 /* Account */,
@@ -311,9 +328,6 @@
 				E788759C2670BC8600FC21F3 /* ChatCellViewModel.swift */,
 				E7887594266A744400FC21F3 /* ChatListView.swift */,
 				E78875962670977700FC21F3 /* ChatListViewModel.swift */,
-				E78875982670B60E00FC21F3 /* MessageListView.swift */,
-				E788759A2670B84300FC21F3 /* MessageListViewModel.swift */,
-				E788759E2671D1D100FC21F3 /* MessageCellView.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -453,6 +467,7 @@
 				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,
 				E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */,
 				E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */,
+				E716B4672675D7C00027EA17 /* MessageView.swift in Sources */,
 				E788754326569B9700FC21F3 /* TutorViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
 				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
@@ -470,6 +485,7 @@
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
+				E716B46A2675E5300027EA17 /* MessageCellViewModel.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
 				E7887590266A625B00FC21F3 /* MessageRepo.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,

@@ -15,21 +15,23 @@ struct MessageListView: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(messageListVM.messages) { message in
-                    MessageCellView(message: message)
+                ForEach(messageListVM.messageCellVMs) { messageCellVM in
+                    MessageCellView(messageCellVM: messageCellVM)
+                   
                 }
             }
             
             HStack {
                 TextField("New Message...", text: $newMessage)
                 Button(action: {
-                    print("Will send message to \(messageListVM.messages)")
+//                    print("Will send message to \(messageListVM.)")
                     messageListVM.sendMessage(newMessage)
                 }, label: {
                     Text("Send")
                 })
             }
         }
+        .padding(.horizontal)
     }
 }
 

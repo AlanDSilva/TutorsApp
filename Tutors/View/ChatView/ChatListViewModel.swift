@@ -19,7 +19,7 @@ class ChatListViewModel: ObservableObject {
         chatRepo.$chats
             .map { chats in
                 chats.map { chat in
-                    ChatCellViewModel(chat: chat, messageListVM: MessageListViewModel(chat.id!))
+                    ChatCellViewModel(chat: chat)
                 }
             }
             .assign(to: \.chatCellVMs, on: self)

@@ -22,6 +22,7 @@ protocol MessageRepo: BaseMessageRepo {
 
 class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     @Injected var authenticationService: AuthenticationService
+    @Injected var chatRepo: ChatRepo
     let db = Firestore.firestore()
     
     var chatId: String = "unknow"
@@ -35,7 +36,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     init(_ id: String) {
         super.init()
         
-        chatId = id
+        chatId = chatRepo.startChat(with: id)
         
         authenticationService.$user
             .compactMap { user in
@@ -58,6 +59,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
             listenerRegistration?.remove()
         }
         listenerRegistration = db.collection(chatsPath).document(chatId).collection(messagesPath)
+            .order(by: "createdTime")
             .addSnapshotListener { querySnapshot, error in
                 if let qSnapshot = querySnapshot {
                     self.messages = qSnapshot.documents.compactMap{ document in
