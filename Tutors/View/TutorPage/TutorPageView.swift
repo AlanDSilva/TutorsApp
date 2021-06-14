@@ -84,8 +84,6 @@ struct TutorPageView: View {
                 Text("Click to Register as tutor")
             })
         }
-        
-        
     }
 }
 

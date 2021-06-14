@@ -20,7 +20,7 @@ class BaseChatRepo {
 protocol ChatRepo: BaseChatRepo {
     func startChat(with id: String) -> String
     func otherUID(from chat: Chat) -> String
-    func updateChat(_ chat: Chat)
+    func updateChat(of chatID: String, with message: Message)
 }
 
 class FirestoreChatRepo: BaseChatRepo, ChatRepo, ObservableObject {
@@ -91,15 +91,20 @@ class FirestoreChatRepo: BaseChatRepo, ChatRepo, ObservableObject {
         chat.members.first { $0 != userId } ?? ""
     }
     
-    func updateChat(_ chat: Chat) {
-        if let chatID = chat.id {
+    func getChat(of chatID: String) -> Chat {
+        chats.first { $0.id == chatID }!
+    }
+    
+    func updateChat(of chatID: String, with message: Message) {
+        var updatedChat = getChat(of: chatID)
+        updatedChat.lastMessage = message
             do {
-                try db.collection(chatsPath).document(chatID).setData(from: chat)
+                try db.collection(chatsPath).document(chatID).setData(from: updatedChat)
+                print("chat succesfully updated")
             }
             catch {
                 fatalError("Unable to encode chat: \(error.localizedDescription).")
             }
-        }
     }
     
 }

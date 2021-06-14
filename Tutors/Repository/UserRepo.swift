@@ -14,11 +14,12 @@ import Resolver
 
 class BaseUserRepo {
     @Published var user: CUser = CUser()
+    @Published var users = [CUser]()
 }
 
 protocol UserRepo: BaseUserRepo {
     func updateUser(_ user: CUser)
-    func getUser(with userID: String, completion: @escaping (CUser) -> ())
+    func fetchUser(with userID: String, completion: @escaping (Result<CUser, DatabaseError>) -> ())
 }
 
 class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
@@ -30,6 +31,7 @@ class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
     var usersPath: String = "users"
     
     private var listenerRegistration: ListenerRegistration?
+    private var listenerRegistration2: ListenerRegistration?
     private var cancellables = Set<AnyCancellable>()
     
     
@@ -78,37 +80,35 @@ class FirestoreUserRepo: BaseUserRepo, UserRepo, ObservableObject {
             }
     }
     
-    func getUser(with userID: String, completion: @escaping (CUser) -> ()) {
-        print("Will get user with id: \(userID)")
-        var result = CUser()
+    func fetchUser(with userID: String, completion: @escaping (Result<CUser, DatabaseError>) -> ()) {
         let docRef = db.collection(usersPath).document(userID)
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                do {
-                    result = try document.data(as: CUser.self)!
-                    print("The user would be \(result)")
-                    completion(result)
-                } catch {
-                    print(error)
-                    completion(result)
-                }
-            } else {
-                print("Document does not exist")
-                completion(result)
+
+        docRef.getDocument { (snap, error) in
+            if let _ = error {
+                completion(.failure(.failed))
+                return
             }
+            
+            guard let userData = try? snap?.data(as: CUser.self) else {
+                completion(.failure(.failed))
+                return
+            }
+            
+            completion(.success(userData))
         }
     }
-        
-        func updateUser(_ user: CUser) {
-            do {
-                try db.collection(usersPath).document(userId).setData(from: user)
-            }
-            catch {
-                fatalError("Unable to encode task: \(error.localizedDescription).")
-            }
+    
+    func updateUser(_ user: CUser) {
+        do {
+            try db.collection(usersPath).document(userId).setData(from: user)
         }
-        
-        
+        catch {
+            fatalError("Unable to encode task: \(error.localizedDescription).")
+        }
     }
+}
+
+enum DatabaseError: String, Error {
+    case failed = "Failed to fetch from database"
+}
 

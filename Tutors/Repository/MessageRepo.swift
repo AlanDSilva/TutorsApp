@@ -70,17 +70,17 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     }
     
     func addMessage(_ message: Message) {
+        var newMessage = message
+        newMessage.userId = userId
         do {
-            var newMessage = message
-            newMessage.userId = userId
             let _ = try db.collection(chatsPath).document(chatId).collection(messagesPath).addDocument(from: newMessage)
             print("Message sent: \(newMessage)")
+            chatRepo.updateChat(of: chatId, with: newMessage)
         }
         catch {
             fatalError("Unable to encode chat: \(error.localizedDescription).")
         }
     }
-    
 }
 
 
