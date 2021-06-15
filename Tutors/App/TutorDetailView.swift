@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TutorDetailView: View {
     //MARK: - properties
-    @ObservedObject var tutorVM: TutorViewModel
-//    let tutor: Tutor
+    @ObservedObject var tutorVM: TutorCellViewModel
+    //    let tutor: Tutor
     
     //MARK: - body
     var body: some View {
@@ -38,7 +38,7 @@ struct TutorDetailView: View {
                                             Image(systemName: "message")
                                         })
                                         NavigationLink(destination: MessageView(uId: tutorVM.tutor.id!)) {
-                                                Image(systemName: "heart")
+                                            Image(systemName: "heart")
                                         }
                                     }
                                     .font(.title2)
@@ -47,6 +47,7 @@ struct TutorDetailView: View {
             
         }
     }
+   
 }
 
 //struct TutorDetailView_Previews: PreviewProvider {

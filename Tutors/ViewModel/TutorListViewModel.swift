@@ -11,7 +11,7 @@ import Resolver
 
 class TutorListViewModel: ObservableObject {
     @Published var tutorsRepo: TutorsRepo = Resolver.resolve()
-    @Published var tutorViewModels = [TutorViewModel]()
+    @Published var tutorViewModels = [TutorCellViewModel]()
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -19,7 +19,7 @@ class TutorListViewModel: ObservableObject {
         tutorsRepo.$tutors
             .map { tutors in
                 tutors.map { tutor in
-                    TutorViewModel(tutor: tutor)
+                    TutorCellViewModel(tutor: tutor)
                 }
             }
             .assign(to: \.tutorViewModels, on: self)

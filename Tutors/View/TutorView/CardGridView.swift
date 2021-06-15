@@ -10,21 +10,20 @@ import SwiftUI
 struct CardGridView: View {
     //MARK: - properties
     @ObservedObject var tutorListVM = TutorListViewModel()
-//    let tutors: [Tutor] = Tutor.data
+    //    let tutors: [Tutor] = Tutor.data
     
     //MARK: - body
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            LazyVGrid(columns: gridLayout, spacing: rowSpacing ,content: {
-                ForEach(tutorListVM.tutorViewModels) {tutorVM in
-                    NavigationLink(destination: TutorDetailView(tutorVM: tutorVM)) {
-                        CardView(tutorVM: tutorVM)
-                    }
-                    
-                }//: loop
-            })//: grid
-            .padding(15)
+            
+            ForEach(tutorListVM.tutorViewModels) {tutorVM in
+                NavigationLink(destination: TutorDetailView(tutorVM: tutorVM)) {
+                    TutorCellView(tutorVM: tutorVM)
+                }
+                
+            }//: loop
         }
+        .padding(.horizontal)
     }
 }
 
