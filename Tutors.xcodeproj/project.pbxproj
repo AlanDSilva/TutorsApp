@@ -62,7 +62,7 @@
 		E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A42673340300FC21F3 /* TutorRepo.swift */; };
 		E7C4420326789705009775DC /* CustonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420226789705009775DC /* CustonShape.swift */; };
 		E7C442052678A72E009775DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442042678A72E009775DC /* InfoView.swift */; };
-		E7C442072678A76B009775DC /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442062678A76B009775DC /* TitleView.swift */; };
+		E7C442072678A76B009775DC /* TitleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442062678A76B009775DC /* TitleView2.swift */; };
 		E7C442092678A79B009775DC /* TutorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442082678A79B009775DC /* TutorCardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -126,7 +126,7 @@
 		E78875A42673340300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
 		E7C4420226789705009775DC /* CustonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonShape.swift; sourceTree = "<group>"; };
 		E7C442042678A72E009775DC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		E7C442062678A76B009775DC /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		E7C442062678A76B009775DC /* TitleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView2.swift; sourceTree = "<group>"; };
 		E7C442082678A79B009775DC /* TutorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -271,7 +271,7 @@
 			children = (
 				E788753F2653E95200FC21F3 /* HeadingView.swift */,
 				E7C442042678A72E009775DC /* InfoView.swift */,
-				E7C442062678A76B009775DC /* TitleView.swift */,
+				E7C442062678A76B009775DC /* TitleView2.swift */,
 				E7C442082678A79B009775DC /* TutorCardView.swift */,
 			);
 			path = TutorDetailView;
@@ -479,7 +479,7 @@
 				E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */,
 				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,
 				E7C442092678A79B009775DC /* TutorCardView.swift in Sources */,
-				E7C442072678A76B009775DC /* TitleView.swift in Sources */,
+				E7C442072678A76B009775DC /* TitleView2.swift in Sources */,
 				E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */,
 				E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */,
 				E716B4672675D7C00027EA17 /* MessageView.swift in Sources */,

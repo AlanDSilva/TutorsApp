@@ -24,11 +24,3 @@ struct TitleView: View {
         .padding(.bottom, 10)
     }
 }
-
-struct TitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TitleView(title: "Tutors")
-            .previewLayout(.sizeThatFits)
-            .background(colorBackground)
-    }
-}

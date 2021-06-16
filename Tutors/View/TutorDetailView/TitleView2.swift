@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-struct TitleView: View {
+struct TitleView2: View {
     var titleText: String
     
     var body: some View {
         Text(titleText)
             .font(.title2)
-    }
-}
-
-struct TitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TitleView()
     }
 }
