@@ -1,5 +1,5 @@
 //
-//  CardGridView.swift
+//  TutorListView.swift
 //  Tutors
 //
 //  Created by Alan on 18.5.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardGridView: View {
+struct TutorListView: View {
     //MARK: - properties
     @ObservedObject var tutorListVM = TutorListViewModel()
     //    let tutors: [Tutor] = Tutor.data
@@ -30,7 +30,7 @@ struct CardGridView: View {
 
 struct CardGridView_Previews: PreviewProvider {
     static var previews: some View {
-        CardGridView()
+        TutorListView()
             .background(colorBackground)
     }
 }

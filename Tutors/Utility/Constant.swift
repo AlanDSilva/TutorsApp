@@ -11,6 +11,7 @@ import SwiftUI
 
 // color
 let colorBackground: Color = Color("ColorBackground")
+let colorPink: Color = Color("ColorPink")
 let colorGray: Color = Color(UIColor.systemGray4)
 
 // layout

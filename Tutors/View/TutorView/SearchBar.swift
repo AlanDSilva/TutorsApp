@@ -11,33 +11,36 @@ struct SearchBar: View {
     //MARK: - properties
     @Binding var text: String
     
-    @State private var isEditing: Bool = false
+    @Binding var isEditing: Bool
     
     //MARK: - body
     var body: some View {
         HStack {
-            TextField("Search... ", text: $text)
+            TextField("Search for tutors ", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)
-                .background(colorGray)
-                .cornerRadius(8)
+                .foregroundColor(.gray)
+                .background(Color.white)
+                .cornerRadius(14)
+                .frame(height: 60)
                 .overlay(
                     HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 8)
-                 
+                        Spacer()
                         if isEditing {
                             Button(action: {
                                 self.text = ""
                             }) {
                                 Image(systemName: "multiply.circle.fill")
-                                    .foregroundColor(.gray)
                                     .padding(.trailing, 8)
                             }
                         }
+                        else {
+                            Image(systemName: "magnifyingglass")
+                                .padding(.trailing, 8)
+                        }
                     }
+                    
+                    .foregroundColor(Color("ColorPink"))
                 )
                 .padding(.horizontal, 10)
                 .onTapGesture {
@@ -60,12 +63,12 @@ struct SearchBar: View {
     }
 }
 
-//struct SearchBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchBar(text: .constant(""))
-//            .previewLayout(.sizeThatFits)
-//            .padding()
-//            .background(colorBackground)
-//
-//    }
-//}
+struct SearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchBar(text: .constant(""), isEditing: .constant(false))
+            .previewLayout(.sizeThatFits)
+            .padding()
+            .background(colorBackground)
+
+    }
+}

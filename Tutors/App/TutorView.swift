@@ -10,21 +10,40 @@ import SwiftUI
 struct TutorView: View {
     //MARK: - properties
     @State var searchText: String = ""
+    @State var isEditing: Bool = false
     
     
     //MARK: - body
     var body: some View {
         NavigationView {
-            VStack {
-                SearchBar(text: $searchText)
-                    .padding(.horizontal, 8)
-                
-                CardGridView()
+            ZStack {
+                colorBackground.edgesIgnoringSafeArea(.all)
+                if isEditing {
+                    Text("Is Editing")
+                    SearchBar(text: $searchText, isEditing: $isEditing)
+                        .padding(.bottom)
+                } else {
+                    VStack {
+                        HeaderView()
+                            .padding(.bottom)
+                        
+                        SearchBar(text: $searchText, isEditing: $isEditing)
+                            .padding(.bottom)
+                        
+                        ButtonsView()
+                            .padding(.bottom)
+                        
+                        CardsView().padding(.top)
+                        
+        //                TutorListView()
+                    }
+                    .padding(.horizontal)
+                    .navigationBarHidden(true)
+                    .ignoresSafeArea(.all)
+                }
             }
-            .navigationBarTitle("Tutors")
             
         }
-        .background(colorBackground)
     }
 }
 

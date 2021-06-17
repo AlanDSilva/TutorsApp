@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    init() {
+            UITabBar.appearance().barTintColor = UIColor(colorPink)
+        }
+    
     var body: some View {
         TabView {
             TutorView()
@@ -34,6 +39,8 @@ struct MainView: View {
                     Text("Account")
                 }
         }
+        .accentColor(.white)
+        
     }
 }
 

@@ -22,7 +22,7 @@
 		E78875292653934C00FC21F3 /* TutorCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875282653934B00FC21F3 /* TutorCellView.swift */; };
 		E788752C2653A42700FC21F3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788752B2653A42700FC21F3 /* Constant.swift */; };
 		E788752E2653A88800FC21F3 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788752D2653A88800FC21F3 /* TitleView.swift */; };
-		E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875302653AA5B00FC21F3 /* CardGridView.swift */; };
+		E78875312653AA5B00FC21F3 /* TutorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875302653AA5B00FC21F3 /* TutorListView.swift */; };
 		E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875322653AD4800FC21F3 /* SubjectItemView.swift */; };
 		E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875342653D30C00FC21F3 /* SubjectGridView.swift */; };
 		E78875372653D38F00FC21F3 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875362653D38F00FC21F3 /* SectionView.swift */; };
@@ -64,6 +64,9 @@
 		E7C442052678A72E009775DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442042678A72E009775DC /* InfoView.swift */; };
 		E7C442072678A76B009775DC /* TitleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442062678A76B009775DC /* TitleView2.swift */; };
 		E7C442092678A79B009775DC /* TutorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442082678A79B009775DC /* TutorCardView.swift */; };
+		E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420A2679CD99009775DC /* HeaderView.swift */; };
+		E7C4420D2679D427009775DC /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420C2679D427009775DC /* ButtonsView.swift */; };
+		E7C4420F2679D9B6009775DC /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420E2679D9B6009775DC /* CardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +89,7 @@
 		E78875282653934B00FC21F3 /* TutorCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCellView.swift; sourceTree = "<group>"; };
 		E788752B2653A42700FC21F3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E788752D2653A88800FC21F3 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
-		E78875302653AA5B00FC21F3 /* CardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGridView.swift; sourceTree = "<group>"; };
+		E78875302653AA5B00FC21F3 /* TutorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorListView.swift; sourceTree = "<group>"; };
 		E78875322653AD4800FC21F3 /* SubjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectItemView.swift; sourceTree = "<group>"; };
 		E78875342653D30C00FC21F3 /* SubjectGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectGridView.swift; sourceTree = "<group>"; };
 		E78875362653D38F00FC21F3 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,9 @@
 		E7C442042678A72E009775DC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		E7C442062678A76B009775DC /* TitleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView2.swift; sourceTree = "<group>"; };
 		E7C442082678A79B009775DC /* TutorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCardView.swift; sourceTree = "<group>"; };
+		E7C4420A2679CD99009775DC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E7C4420C2679D427009775DC /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		E7C4420E2679D9B6009775DC /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,8 +253,11 @@
 				E788752D2653A88800FC21F3 /* TitleView.swift */,
 				E78875382653D97200FC21F3 /* SearchBar.swift */,
 				E78875282653934B00FC21F3 /* TutorCellView.swift */,
-				E78875302653AA5B00FC21F3 /* CardGridView.swift */,
+				E78875302653AA5B00FC21F3 /* TutorListView.swift */,
 				E78875362653D38F00FC21F3 /* SectionView.swift */,
+				E7C4420A2679CD99009775DC /* HeaderView.swift */,
+				E7C4420C2679D427009775DC /* ButtonsView.swift */,
+				E7C4420E2679D9B6009775DC /* CardsView.swift */,
 			);
 			path = TutorView;
 			sourceTree = "<group>";
@@ -486,11 +495,13 @@
 				E788754326569B9700FC21F3 /* TutorCellViewModel.swift in Sources */,
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
 				E7C4420326789705009775DC /* CustonShape.swift in Sources */,
+				E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */,
 				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
 				E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */,
 				E78875842663E4E200FC21F3 /* EditLocationView.swift in Sources */,
 				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
 				E78875212652A52000FC21F3 /* MainView.swift in Sources */,
+				E7C4420D2679D427009775DC /* ButtonsView.swift in Sources */,
 				E788751D2652A4C900FC21F3 /* ScheduleView.swift in Sources */,
 				E78875292653934C00FC21F3 /* TutorCellView.swift in Sources */,
 				E788757D2662607B00FC21F3 /* MapView.swift in Sources */,
@@ -502,11 +513,12 @@
 				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
 				E716B46A2675E5300027EA17 /* MessageCellViewModel.swift in Sources */,
-				E78875312653AA5B00FC21F3 /* CardGridView.swift in Sources */,
+				E78875312653AA5B00FC21F3 /* TutorListView.swift in Sources */,
 				E7887590266A625B00FC21F3 /* MessageRepo.swift in Sources */,
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */,
 				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
+				E7C4420F2679D9B6009775DC /* CardsView.swift in Sources */,
 				E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
 				E788751F2652A4D500FC21F3 /* AccountView.swift in Sources */,
