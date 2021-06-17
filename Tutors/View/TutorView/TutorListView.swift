@@ -17,7 +17,8 @@ struct TutorListView: View {
         ScrollView(.vertical, showsIndicators: false) {
             
             ForEach(tutorListVM.tutorViewModels) {tutorVM in
-                NavigationLink(destination: TutorDetailView(tutorVM: tutorVM)
+                NavigationLink(destination: //TutorDetailView(tutorVM: tutorVM)
+                                TutorDetailView()
                 ) {
                     TutorCellView(tutorVM: tutorVM)
                 }

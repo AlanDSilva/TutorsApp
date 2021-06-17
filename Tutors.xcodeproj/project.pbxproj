@@ -28,7 +28,6 @@
 		E78875372653D38F00FC21F3 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875362653D38F00FC21F3 /* SectionView.swift */; };
 		E78875392653D97200FC21F3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875382653D97200FC21F3 /* SearchBar.swift */; };
 		E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788753A2653E15C00FC21F3 /* TutorDetailView.swift */; };
-		E78875402653E95200FC21F3 /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788753F2653E95200FC21F3 /* HeadingView.swift */; };
 		E788754326569B9700FC21F3 /* TutorCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754226569B9700FC21F3 /* TutorCellViewModel.swift */; };
 		E788754526569D1500FC21F3 /* TutorListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E788754426569D1500FC21F3 /* TutorListViewModel.swift */; };
 		E78875472656A29700FC21F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E78875462656A29700FC21F3 /* GoogleService-Info.plist */; };
@@ -62,8 +61,6 @@
 		E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78875A42673340300FC21F3 /* TutorRepo.swift */; };
 		E7C4420326789705009775DC /* CustonShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420226789705009775DC /* CustonShape.swift */; };
 		E7C442052678A72E009775DC /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442042678A72E009775DC /* InfoView.swift */; };
-		E7C442072678A76B009775DC /* TitleView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442062678A76B009775DC /* TitleView2.swift */; };
-		E7C442092678A79B009775DC /* TutorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C442082678A79B009775DC /* TutorCardView.swift */; };
 		E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420A2679CD99009775DC /* HeaderView.swift */; };
 		E7C4420D2679D427009775DC /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420C2679D427009775DC /* ButtonsView.swift */; };
 		E7C4420F2679D9B6009775DC /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420E2679D9B6009775DC /* CardsView.swift */; };
@@ -95,7 +92,6 @@
 		E78875362653D38F00FC21F3 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		E78875382653D97200FC21F3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E788753A2653E15C00FC21F3 /* TutorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorDetailView.swift; sourceTree = "<group>"; };
-		E788753F2653E95200FC21F3 /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
 		E788754226569B9700FC21F3 /* TutorCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCellViewModel.swift; sourceTree = "<group>"; };
 		E788754426569D1500FC21F3 /* TutorListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorListViewModel.swift; sourceTree = "<group>"; };
 		E78875462656A29700FC21F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 		E78875A42673340300FC21F3 /* TutorRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorRepo.swift; sourceTree = "<group>"; };
 		E7C4420226789705009775DC /* CustonShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonShape.swift; sourceTree = "<group>"; };
 		E7C442042678A72E009775DC /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
-		E7C442062678A76B009775DC /* TitleView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView2.swift; sourceTree = "<group>"; };
-		E7C442082678A79B009775DC /* TutorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorCardView.swift; sourceTree = "<group>"; };
 		E7C4420A2679CD99009775DC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E7C4420C2679D427009775DC /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		E7C4420E2679D9B6009775DC /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
@@ -278,10 +272,7 @@
 		E788753E2653E91A00FC21F3 /* TutorDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				E788753F2653E95200FC21F3 /* HeadingView.swift */,
 				E7C442042678A72E009775DC /* InfoView.swift */,
-				E7C442062678A76B009775DC /* TitleView2.swift */,
-				E7C442082678A79B009775DC /* TutorCardView.swift */,
 			);
 			path = TutorDetailView;
 			sourceTree = "<group>";
@@ -487,8 +478,6 @@
 				E78875812662710A00FC21F3 /* TutorPageHeadingView.swift in Sources */,
 				E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */,
 				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,
-				E7C442092678A79B009775DC /* TutorCardView.swift in Sources */,
-				E7C442072678A76B009775DC /* TitleView2.swift in Sources */,
 				E7887593266A71A200FC21F3 /* ChatCellView.swift in Sources */,
 				E78875992670B60E00FC21F3 /* MessageListView.swift in Sources */,
 				E716B4672675D7C00027EA17 /* MessageView.swift in Sources */,
@@ -510,7 +499,6 @@
 				E788758A266650E800FC21F3 /* TutorPageViewModel.swift in Sources */,
 				E788757B26625DA300FC21F3 /* TutorPageView.swift in Sources */,
 				E788750B2652A2F300FC21F3 /* TutorsApp.swift in Sources */,
-				E78875402653E95200FC21F3 /* HeadingView.swift in Sources */,
 				E7887555265BD1FB00FC21F3 /* LoadingView.swift in Sources */,
 				E716B46A2675E5300027EA17 /* MessageCellViewModel.swift in Sources */,
 				E78875312653AA5B00FC21F3 /* TutorListView.swift in Sources */,

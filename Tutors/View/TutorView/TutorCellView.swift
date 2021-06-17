@@ -19,7 +19,7 @@ struct TutorCellView: View {
             if tutorVM.image != nil {
                 Image(uiImage: tutorVM.image!)
                     .resizable()
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
                     .frame(width: 75, height: 75)
                     .padding(.trailing)
                     
@@ -50,8 +50,8 @@ struct TutorCellView: View {
         }
         .padding()
         .frame(height: 100)
-        .background(RoundedRectangle(cornerRadius: 16).fill(colorGray))
-        .foregroundColor(.primary)
+        .background(RoundedRectangle(cornerRadius: 16).fill(colorPink))
+        .foregroundColor(.white)
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonsView: View {
-    @State private var selectedFilter = Filter.recent
+    @Binding var selectedFilter: Filter
     var body: some View {
         
         HStack(spacing: 20) {
@@ -86,7 +86,7 @@ func getFilterImg(from filter: Filter) -> String {
 
 struct Buttons_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsView()
+        ButtonsView(selectedFilter: .constant(Filter.popular))
             .background(colorBackground)
         ButtonView()
         

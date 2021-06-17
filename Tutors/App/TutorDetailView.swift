@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TutorDetailView: View {
     //MARK: - properties
-        @ObservedObject var tutorVM: TutorCellViewModel
+    //        @ObservedObject var tutorVM: TutorCellViewModel
     //    let tutor: Tutor
     
     //MARK: - body
@@ -47,70 +47,139 @@ struct TutorDetailView: View {
     //
     //        }
     //    }
+    @State var tabSelection: Int = 0
     var body: some View {
         
-        
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16){
-                TutorCardView()
-                    .zIndex(1.0)
-                    .frame(height: 130)
-                    
+        ZStack(alignment: .top) {
+            colorBackground.edgesIgnoringSafeArea(.all)
+            VStack {
+                Image("cat4")
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(CustomShape())
                 
-                TitleView2(titleText: "About \(tutorVM.tutor.displayName)")
+                InfoCardView()
                 
-                Text(tutorVM.tutor.description)
-                    .lineLimit(4)
+                SelectionButtonsView(tabSelection: $tabSelection)
                 
-                
-                
-                TitleView2(titleText: "Courses by \(tutorVM.tutor.displayName)")
-                SubjectGridView(subjects: .constant(tutorVM.tutor.subjects) )
-                
-                TitleView2(titleText: "Connect")
-                HStack{
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "heart.circle")
-                    }
-                    .foregroundColor(.pink)
-                    
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "message.circle")
-                    }
-                    .foregroundColor(.green)
-                    
-                    
+                TabView(selection: $tabSelection) {
+                    SettingsView().tag(0)
+                    GalleryView().tag(1)
+                    ReviewsView().tag(2)
                 }
-                .font(.system(.title, design: .rounded))
-                .imageScale(.large)
+                .tabViewStyle(PageTabViewStyle())
+                
+                
                 
                 
             }
-            .padding(.horizontal)
-            .background(colorGray
-                            .clipShape(CustomShape())
-                            .padding(.top, 65)
-                            .padding(.bottom, -200)
-            )
-            
-            
+            .edgesIgnoringSafeArea(.top)
         }
-        .navigationBarTitle(tutorVM.tutor.displayName)
-        
     }
-    
 }
 
-//struct TutorDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            TutorDetailView()
-//        }
-//
-//    }
-//}
+struct SettingsView: View {
+    var body: some View {
+        Text("Hello, Description")
+    }
+}
+
+struct GalleryView: View {
+    var body: some View {
+        Text("Hello, Description")
+    }
+}
+
+struct ReviewsView: View {
+    var body: some View {
+        Text("Hello, Description")
+    }
+}
+
+protocol SelectableProtocol {
+    var simpleDescription: String {get}
+}
+
+enum Selection: Int, CaseIterable, Identifiable, SelectableProtocol {
+    case description = 0, gallery, reviews
+    
+    var id: Int { self.rawValue }
+    
+    var simpleDescription: String {
+        self.getDescription()
+    }
+    
+    func getDescription() -> String {
+        switch self {
+        case .description: return "Place Description"
+        case .gallery: return "Gallery"
+        case .reviews: return "Reviews"
+        }
+    }
+}
+
+struct SelectionTextView: View {
+    var selectText: String = "Place Description"
+    var isSelected: Bool = true
+    var body: some View {
+        VStack{
+            Text(selectText)
+            if isSelected {
+                Image(systemName: "dot.square")
+            }
+        }
+        .foregroundColor(isSelected ? colorPink : colorGray)
+    }
+}
+
+struct InfoCardView: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                Text("Full Name")
+                    .font(.title3)
+                Image(systemName: "pin")
+                Text("Helsinki")
+            }
+            HStack {
+                Image(systemName: "star")
+                Text("3.4")
+                Image(systemName: "person.2")
+                Text("300")
+                Image(systemName: "play")
+                Text("2")
+            }
+            .font(.caption)
+            .foregroundColor(.gray)
+        }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 25.0).fill(Color.white).shadow(color: Color.gray, radius: 5.0, x: CGFloat(0.7), y: CGFloat(0.3)))
+        .offset(y: -60)
+        .padding(.bottom, -40)
+    }
+}
+
+
+struct TutorDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            TutorDetailView()
+        }
+    }
+}
+
+struct SelectionButtonsView: View {
+    @Binding var tabSelection: Int
+    var body: some View {
+        HStack(spacing: 20) {
+            ForEach(Selection.allCases) { selection in
+                Button(action: {
+                    tabSelection = selection.rawValue
+                }, label: {
+                    SelectionTextView(selectText: selection.getDescription(), isSelected: tabSelection == selection.rawValue)
+                })
+                
+            }
+        }
+    }
+}

@@ -12,6 +12,9 @@ struct TutorView: View {
     @State var searchText: String = ""
     @State var isEditing: Bool = false
     
+    @State var results = []
+    @State var selectedFilter: Filter = Filter.recent
+    
     
     //MARK: - body
     var body: some View {
@@ -19,9 +22,13 @@ struct TutorView: View {
             ZStack {
                 colorBackground.edgesIgnoringSafeArea(.all)
                 if isEditing {
-                    Text("Is Editing")
-                    SearchBar(text: $searchText, isEditing: $isEditing)
-                        .padding(.bottom)
+                    VStack {
+                        SearchBar(text: $searchText, isEditing: $isEditing)
+                            .padding(.bottom)
+                        TutorListView()
+                    }
+                    
+                        
                 } else {
                     VStack {
                         HeaderView()
@@ -30,7 +37,7 @@ struct TutorView: View {
                         SearchBar(text: $searchText, isEditing: $isEditing)
                             .padding(.bottom)
                         
-                        ButtonsView()
+                        ButtonsView(selectedFilter: $selectedFilter)
                             .padding(.bottom)
                         
                         CardsView().padding(.top)
