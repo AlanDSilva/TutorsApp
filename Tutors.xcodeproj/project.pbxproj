@@ -64,6 +64,11 @@
 		E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420A2679CD99009775DC /* HeaderView.swift */; };
 		E7C4420D2679D427009775DC /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420C2679D427009775DC /* ButtonsView.swift */; };
 		E7C4420F2679D9B6009775DC /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4420E2679D9B6009775DC /* CardsView.swift */; };
+		E7C44211267C5F39009775DC /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44210267C5F39009775DC /* DescriptionView.swift */; };
+		E7C44213267C5F47009775DC /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44212267C5F47009775DC /* GalleryView.swift */; };
+		E7C44215267C5F54009775DC /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44214267C5F54009775DC /* ReviewsView.swift */; };
+		E7C44217267C71CA009775DC /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44216267C71CA009775DC /* InfoCardView.swift */; };
+		E7C44219267C726D009775DC /* TabButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44218267C726D009775DC /* TabButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +133,11 @@
 		E7C4420A2679CD99009775DC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E7C4420C2679D427009775DC /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		E7C4420E2679D9B6009775DC /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		E7C44210267C5F39009775DC /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		E7C44212267C5F47009775DC /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		E7C44214267C5F54009775DC /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
+		E7C44216267C71CA009775DC /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
+		E7C44218267C726D009775DC /* TabButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +283,11 @@
 			isa = PBXGroup;
 			children = (
 				E7C442042678A72E009775DC /* InfoView.swift */,
+				E7C44210267C5F39009775DC /* DescriptionView.swift */,
+				E7C44212267C5F47009775DC /* GalleryView.swift */,
+				E7C44214267C5F54009775DC /* ReviewsView.swift */,
+				E7C44216267C71CA009775DC /* InfoCardView.swift */,
+				E7C44218267C726D009775DC /* TabButtonsView.swift */,
 			);
 			path = TutorDetailView;
 			sourceTree = "<group>";
@@ -486,6 +501,8 @@
 				E7C4420326789705009775DC /* CustonShape.swift in Sources */,
 				E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */,
 				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
+				E7C44217267C71CA009775DC /* InfoCardView.swift in Sources */,
+				E7C44213267C5F47009775DC /* GalleryView.swift in Sources */,
 				E788754E2658FA8B00FC21F3 /* ImagePicker.swift in Sources */,
 				E78875842663E4E200FC21F3 /* EditLocationView.swift in Sources */,
 				E788752C2653A42700FC21F3 /* Constant.swift in Sources */,
@@ -506,6 +523,7 @@
 				E78875372653D38F00FC21F3 /* SectionView.swift in Sources */,
 				E788759D2670BC8600FC21F3 /* ChatCellViewModel.swift in Sources */,
 				E788758E2667AACA00FC21F3 /* ChatRepo.swift in Sources */,
+				E7C44211267C5F39009775DC /* DescriptionView.swift in Sources */,
 				E7C4420F2679D9B6009775DC /* CardsView.swift in Sources */,
 				E78875A52673340300FC21F3 /* TutorRepo.swift in Sources */,
 				E788753B2653E15C00FC21F3 /* TutorDetailView.swift in Sources */,
@@ -514,9 +532,11 @@
 				E78875862663E55600FC21F3 /* EditDescriptionView.swift in Sources */,
 				E78875A32671E16500FC21F3 /* UserRepo.swift in Sources */,
 				E78875352653D30C00FC21F3 /* SubjectGridView.swift in Sources */,
+				E7C44219267C726D009775DC /* TabButtonsView.swift in Sources */,
 				E788757F2662609E00FC21F3 /* CircleImageView.swift in Sources */,
 				E78875972670977800FC21F3 /* ChatListViewModel.swift in Sources */,
 				E7887595266A744400FC21F3 /* ChatListView.swift in Sources */,
+				E7C44215267C5F54009775DC /* ReviewsView.swift in Sources */,
 				E78875772661895300FC21F3 /* SettingsViewModel.swift in Sources */,
 				E78875882663ECFA00FC21F3 /* EditSubjectsView.swift in Sources */,
 				E788758C2667A63500FC21F3 /* ChatModel.swift in Sources */,
