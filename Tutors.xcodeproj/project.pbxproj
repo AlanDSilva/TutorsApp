@@ -69,6 +69,9 @@
 		E7C44215267C5F54009775DC /* ReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44214267C5F54009775DC /* ReviewsView.swift */; };
 		E7C44217267C71CA009775DC /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44216267C71CA009775DC /* InfoCardView.swift */; };
 		E7C44219267C726D009775DC /* TabButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C44218267C726D009775DC /* TabButtonsView.swift */; };
+		E7C4421B267C9911009775DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421A267C9911009775DC /* EventView.swift */; };
+		E7C4421D26805BB0009775DC /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421C26805BB0009775DC /* HelperFunctions.swift */; };
+		E7C4421F2681A358009775DC /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421E2681A358009775DC /* EventModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +141,9 @@
 		E7C44214267C5F54009775DC /* ReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsView.swift; sourceTree = "<group>"; };
 		E7C44216267C71CA009775DC /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		E7C44218267C726D009775DC /* TabButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonsView.swift; sourceTree = "<group>"; };
+		E7C4421A267C9911009775DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		E7C4421C26805BB0009775DC /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E7C4421E2681A358009775DC /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +233,7 @@
 				E788751A2652A47500FC21F3 /* ChatView.swift */,
 				E788751E2652A4D500FC21F3 /* AccountView.swift */,
 				E716B4662675D7C00027EA17 /* MessageView.swift */,
+				E7C4421A267C9911009775DC /* EventView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 				E78875232652A9D000FC21F3 /* TutorModel.swift */,
 				E788758B2667A63500FC21F3 /* ChatModel.swift */,
 				E78875A02671DF4A00FC21F3 /* UserModel.swift */,
+				E7C4421E2681A358009775DC /* EventModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +255,7 @@
 				E788752B2653A42700FC21F3 /* Constant.swift */,
 				E788754D2658FA8B00FC21F3 /* ImagePicker.swift */,
 				E7C4420226789705009775DC /* CustonShape.swift */,
+				E7C4421C26805BB0009775DC /* HelperFunctions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -486,6 +495,8 @@
 				E78875242652A9D000FC21F3 /* TutorModel.swift in Sources */,
 				E788750D2652A2F300FC21F3 /* TutorView.swift in Sources */,
 				E788759B2670B84300FC21F3 /* MessageListViewModel.swift in Sources */,
+				E7C4421B267C9911009775DC /* EventView.swift in Sources */,
+				E7C4421D26805BB0009775DC /* HelperFunctions.swift in Sources */,
 				E7C442052678A72E009775DC /* InfoView.swift in Sources */,
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
 				E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */,
@@ -500,6 +511,7 @@
 				E78875332653AD4800FC21F3 /* SubjectItemView.swift in Sources */,
 				E7C4420326789705009775DC /* CustonShape.swift in Sources */,
 				E7C4420B2679CD99009775DC /* HeaderView.swift in Sources */,
+				E7C4421F2681A358009775DC /* EventModel.swift in Sources */,
 				E7887575266187BF00FC21F3 /* TutorsApp+Injection.swift in Sources */,
 				E7C44217267C71CA009775DC /* InfoCardView.swift in Sources */,
 				E7C44213267C5F47009775DC /* GalleryView.swift in Sources */,

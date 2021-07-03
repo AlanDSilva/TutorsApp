@@ -11,20 +11,20 @@ struct MessageListView: View {
     
     @ObservedObject var messageListVM: MessageListViewModel
     @State var newMessage: String = ""
+    @State var showingSheet: Bool = false
     
     var body: some View {
         VStack {
             ScrollView {
                 ForEach(messageListVM.messageCellVMs) { messageCellVM in
                     MessageCellView(messageCellVM: messageCellVM)
-                   
                 }
             }
             
             HStack {
                 TextField("New Message...", text: $newMessage)
                 Button(action: {
-//                    print("Will send message to \(messageListVM.)")
+                    //                    print("Will send message to \(messageListVM.)")
                     messageListVM.sendMessage(newMessage)
                 }, label: {
                     Text("Send")
@@ -32,6 +32,19 @@ struct MessageListView: View {
             }
         }
         .padding(.horizontal)
+        .sheet(isPresented: $showingSheet) {
+                    EventView(messageListVM: messageListVM)
+                }
+        .navigationBarItems(
+            leading:
+                Button(action: {print("Going to go back")}, label: {
+                    HeaderImage()
+                }),
+            trailing:
+                Button(action: {showingSheet.toggle()}, label: {
+                    HeaderImage(imgName: "plus.square.fill")
+                })
+        )
     }
 }
 

@@ -11,6 +11,7 @@ import Combine
 class MessageListViewModel: ObservableObject {
     @Published var messageRepo: FirestoreMessageRepo
     @Published var messageCellVMs = [MessageCellViewModel]()
+    var userID: String = ""
     
     private var cancellables = Set<AnyCancellable>()
     

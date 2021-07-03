@@ -39,10 +39,10 @@ class ChatCellViewModel: ObservableObject, Identifiable {
             .map { $0.lastMessage.userId == self.uId ? $0.lastMessage.message : "You: \($0.lastMessage.message)"}
             .assign(to: \.message, on: self)
             .store(in: &cancellables)
-        $chat
-            .map { self.formatDate(date: ($0.lastMessage.createdTime?.dateValue())!)}
-            .assign(to: \.dateString, on: self)
-            .store(in: &cancellables)
+//        $chat
+//            .map { self.formatDate(date: ($0.lastMessage.createdTime?.dateValue())!)}
+//            .assign(to: \.dateString, on: self)
+//            .store(in: &cancellables)
     }
     
     func loadImage() {

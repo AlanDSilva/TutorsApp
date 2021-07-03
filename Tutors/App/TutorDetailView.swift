@@ -88,11 +88,7 @@ struct TutorDetailView: View {
                         
                         HStack {
                             Spacer()
-                            Text("Send message")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(RoundedRectangle(cornerRadius: 25).fill(colorPink))
-                                .padding()
+                            CustomButtonView()
                         }
                         .padding(.horizontal)
                     }
@@ -130,5 +126,19 @@ struct HeaderImage: View {
         Image(systemName: imgName)
             .foregroundColor(colorPink)
             .font(.largeTitle)
+    }
+}
+
+struct CustomButtonView: View {
+    var text: String = "Send message"
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25).fill(colorPink)
+                .padding()
+            Text(text)
+                .padding()
+                .foregroundColor(.white)
+                .padding()
+        }
     }
 }

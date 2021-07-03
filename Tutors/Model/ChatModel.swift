@@ -20,4 +20,5 @@ struct Message: Codable, Identifiable {
     var message: String = ""
     @ServerTimestamp var createdTime: Timestamp?
     var userId: String = ""
+    var eventId: String?
 }
