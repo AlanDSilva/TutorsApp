@@ -31,4 +31,9 @@ class MessageListViewModel: ObservableObject {
         print("Call send message inside ViewModel")
         messageRepo.addMessage(Message(message: message, userId: ""))
     }
+    
+    func sendEvent(_ eventID: String) {
+        print("Call send event inside ViewModel")
+        messageRepo.addMessage(Message(message: "EVENT REQUEST", eventId: eventID))
+    }
 }

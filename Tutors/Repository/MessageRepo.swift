@@ -29,6 +29,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
     var chatsPath: String = "chats"
     var messagesPath: String = "messages"
     var userId: String = "unknown"
+    var otherId: String = "unknown"
     
     private var listenerRegistration: ListenerRegistration?
     private var cancellables = Set<AnyCancellable>()
@@ -37,6 +38,7 @@ class FirestoreMessageRepo: BaseMessageRepo, MessageRepo, ObservableObject {
         super.init()
         
         chatId = chatRepo.startChat(with: id)
+        otherId = chatRepo.otherUID(from: chatRepo.getChat(of: chatId))
         
         authenticationService.$user
             .compactMap { user in

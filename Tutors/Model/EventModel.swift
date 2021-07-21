@@ -18,4 +18,6 @@ struct Event: Identifiable, Codable {
     var date: String = ""
     var startTime: String = ""
     var endTime: String = ""
+    var confirmed: Bool = false
+    var senderID: String = ""
 }

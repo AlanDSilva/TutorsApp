@@ -15,6 +15,8 @@ struct MessageListView: View {
     
     var body: some View {
         VStack {
+            Text(messageListVM.messageRepo.otherId)
+            Text(messageListVM.messageRepo.userId)
             ScrollView {
                 ForEach(messageListVM.messageCellVMs) { messageCellVM in
                     MessageCellView(messageCellVM: messageCellVM)

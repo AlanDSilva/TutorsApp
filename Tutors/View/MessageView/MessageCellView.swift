@@ -8,13 +8,47 @@
 import SwiftUI
 
 struct MessageCellView: View {
-    var messageCellVM: MessageCellViewModel
+    @ObservedObject var messageCellVM: MessageCellViewModel
     
     var body: some View {
         if messageCellVM.position {
-            RightMessageCellView(message: messageCellVM.message)
+            if let eventInfo = messageCellVM.eventInfo {
+                VStack {
+                    Text("Invitation to following event \nDate: \(eventInfo.date)\nStart: \(eventInfo.startTime) \nEnd: \(eventInfo.endTime)")
+                    HStack {
+                        Button(action: {
+                            messageCellVM.removeEvent(of: eventInfo.id!)
+                        }, label: {
+                            Text("Cancel")
+                        })
+                        .foregroundColor(.red)
+                    }
+                }.rightMessageCell()
+            } else {
+                Text(messageCellVM.message.message).rightMessageCell()
+            }
         } else {
-            LeftMessageCellView(message: messageCellVM.message)
+            if let eventInfo = messageCellVM.eventInfo {
+                VStack {
+                    Text("Invitation to following event \nDate: \(eventInfo.date)\nStart: \(eventInfo.startTime) \nEnd: \(eventInfo.endTime)")
+                    HStack(spacing: 48) {
+                        Button(action: {
+                            messageCellVM.removeEvent(of: eventInfo.id!)
+                        }, label: {
+                            Text("Reject")
+                        })
+                        .foregroundColor(.red)
+                        Button(action: {
+                            messageCellVM.acceptEvent(of: eventInfo.id!)
+                        }, label: {
+                            Text("Accept")
+                        })
+                        .foregroundColor(.green)
+                    }
+                }.leftMessageCell()
+            } else {
+                Text(messageCellVM.message.message).leftMessageCell()
+            }
         }
         
     }
@@ -59,3 +93,33 @@ struct RightMessageCellView: View {
     }
 }
 
+struct LeftMessageCell: ViewModifier {
+    func body(content: Content) -> some View {
+        HStack {
+            content
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 25.0).fill(Color.blue))
+            Spacer()
+        }
+    }
+}
+
+struct RightMessageCell: ViewModifier {
+    func body(content: Content) -> some View {
+        HStack {
+            Spacer()
+            content
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 25.0).fill(Color.gray))
+        }
+    }
+}
+
+extension View {
+    func leftMessageCell() -> some View {
+        modifier(LeftMessageCell())
+    }
+    func rightMessageCell() -> some View {
+        modifier(RightMessageCell())
+    }
+}

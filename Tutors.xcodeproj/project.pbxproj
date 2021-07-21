@@ -72,6 +72,7 @@
 		E7C4421B267C9911009775DC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421A267C9911009775DC /* EventView.swift */; };
 		E7C4421D26805BB0009775DC /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421C26805BB0009775DC /* HelperFunctions.swift */; };
 		E7C4421F2681A358009775DC /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4421E2681A358009775DC /* EventModel.swift */; };
+		E7C4422126932127009775DC /* EventRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4422026932127009775DC /* EventRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		E7C4421A267C9911009775DC /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		E7C4421C26805BB0009775DC /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		E7C4421E2681A358009775DC /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		E7C4422026932127009775DC /* EventRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 				E788758D2667AACA00FC21F3 /* ChatRepo.swift */,
 				E788758F266A625B00FC21F3 /* MessageRepo.swift */,
 				E78875A22671E16500FC21F3 /* UserRepo.swift */,
+				E7C4422026932127009775DC /* EventRepo.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				E78875392653D97200FC21F3 /* SearchBar.swift in Sources */,
 				E7887566265FB52600FC21F3 /* AuthenticationService.swift in Sources */,
 				E7887563265EA11500FC21F3 /* PhotoPickerView.swift in Sources */,
+				E7C4422126932127009775DC /* EventRepo.swift in Sources */,
 				E78875812662710A00FC21F3 /* TutorPageHeadingView.swift in Sources */,
 				E78875A12671DF4B00FC21F3 /* UserModel.swift in Sources */,
 				E788759F2671D1D100FC21F3 /* MessageCellView.swift in Sources */,

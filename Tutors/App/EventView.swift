@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 struct EventView: View {
@@ -74,14 +75,38 @@ struct EventView: View {
         event.date = formatDate(date: date)
         event.startTime = formatTime(date: startTime)
         event.endTime = formatTime(date: endTime)
+        event.senderID = messageListVM.messageRepo.userId
         if selectedRole == Role.student {
             event.studentID = messageListVM.messageRepo.userId
+            event.teacherID = messageListVM.messageRepo.otherId
         }
         if selectedRole == Role.teacher {
             event.teacherID = messageListVM.messageRepo.userId
+            event.studentID = messageListVM.messageRepo.otherId
         }
         
         print(event)
+        createEvent(from: event) { eventID, error in
+            if let eventID = eventID {
+                print("The event ID will be \(eventID)")
+                messageListVM.sendEvent(eventID)
+            }
+        }
+    }
+    
+    func createEvent(from event: Event, completion: @escaping (String?, Error?) -> Void)  {
+        let eventPath = "events"
+        let db = Firestore.firestore()
+        
+        print("Will create Event")
+        do {
+            let new_event = try db.collection(eventPath).addDocument(from: event)
+            print("Will send event with ID: \(new_event.documentID)")
+            completion(new_event.documentID, nil)
+        } catch let error {
+            print("Error writing event to Firestore: \(error)")
+            completion(nil, error)
+        }
     }
 }
 

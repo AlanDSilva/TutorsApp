@@ -20,6 +20,7 @@ class BaseChatRepo {
 protocol ChatRepo: BaseChatRepo {
     func startChat(with id: String) -> String
     func otherUID(from chat: Chat) -> String
+    func getChat(of chatID: String) -> Chat
     func updateChat(of chatID: String, with message: Message)
 }
 
