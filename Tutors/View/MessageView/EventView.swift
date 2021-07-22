@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 
 struct EventView: View {
-    @ObservedObject var messageListVM: MessageListViewModel
+    @ObservedObject var eventVM: EventViewModel
     @State private var selectedTab: Int = 0
     @State private var selectedRole : Role = Role.teacher
     @State private var date = Date()
@@ -30,11 +30,29 @@ struct EventView: View {
                 }
             }
             TabView(selection: $selectedTab) {
-                RolePickerView(selectedRole: $selectedRole).tag(0)
+                RolePickerView(selectedRole: $selectedRole)
+                    .onChange(of: selectedRole, perform: { value in
+                        eventVM.changeRole(to: value)
+                        print(eventVM.event)
+                    })
+                    .tag(0)
                 
-                DatePickerView(date: $date).tag(1)
+                DatePickerView(date: $date)
+                    .onChange(of: date, perform: { value in
+                        eventVM.changeDate(to: value)
+                        print(eventVM.event)
+                    })
+                    .tag(1)
                 
-                TimePickerView(startTime: $startTime, endTime: $endTime).tag(2)
+                TimePickerView(startTime: $startTime, endTime: $endTime)
+                    .onChange(of: startTime, perform: { value in
+                        eventVM.changeStartTime(to: value)
+                        print(eventVM.event)
+                    })
+                    .onChange(of: endTime, perform: { value in
+                        eventVM.changeEndTime(to: value)
+                        print(eventVM.event)
+                    }).tag(2)
                 
                 VStack {
                     List(0..<positions.count - 1) { index in
@@ -52,7 +70,7 @@ struct EventView: View {
                 if selectedTab < 3 {
                     selectedTab += 1
                 } else {
-                    sendInvitation()
+                    eventVM.sendInvitation()
                 }
             }, label: {
                 CustomButtonView(text: selectedTab < 3 ? positions[selectedTab+1]+" >" : "Finish >")
@@ -64,50 +82,12 @@ struct EventView: View {
     func getData(of position: Int) -> String {
         switch(position) {
         case 0: return selectedRole.rawValue
-        case 1: return formatDate(date: date)
-        case 2: return formatTime(date: startTime) + " to " + formatTime(date: endTime)
+        case 1: return eventVM.event.date
+        case 2: return eventVM.event.startTime + " to " + eventVM.event.endTime
         default: return ""
         }
     }
     
-    func sendInvitation() {
-        var event = Event()
-        event.date = formatDate(date: date)
-        event.startTime = formatTime(date: startTime)
-        event.endTime = formatTime(date: endTime)
-        event.senderID = messageListVM.messageRepo.userId
-        if selectedRole == Role.student {
-            event.studentID = messageListVM.messageRepo.userId
-            event.teacherID = messageListVM.messageRepo.otherId
-        }
-        if selectedRole == Role.teacher {
-            event.teacherID = messageListVM.messageRepo.userId
-            event.studentID = messageListVM.messageRepo.otherId
-        }
-        
-        print(event)
-        createEvent(from: event) { eventID, error in
-            if let eventID = eventID {
-                print("The event ID will be \(eventID)")
-                messageListVM.sendEvent(eventID)
-            }
-        }
-    }
-    
-    func createEvent(from event: Event, completion: @escaping (String?, Error?) -> Void)  {
-        let eventPath = "events"
-        let db = Firestore.firestore()
-        
-        print("Will create Event")
-        do {
-            let new_event = try db.collection(eventPath).addDocument(from: event)
-            print("Will send event with ID: \(new_event.documentID)")
-            completion(new_event.documentID, nil)
-        } catch let error {
-            print("Error writing event to Firestore: \(error)")
-            completion(nil, error)
-        }
-    }
 }
 
 enum Role: String, CaseIterable, Identifiable {

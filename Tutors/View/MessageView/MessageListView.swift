@@ -35,7 +35,7 @@ struct MessageListView: View {
         }
         .padding(.horizontal)
         .sheet(isPresented: $showingSheet) {
-                    EventView(messageListVM: messageListVM)
+            EventView(eventVM: EventViewModel(chatID: messageListVM.messageRepo.chatId, userID: messageListVM.messageRepo.userId, otherID: messageListVM.messageRepo.otherId))
                 }
         .navigationBarItems(
             leading:
