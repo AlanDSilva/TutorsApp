@@ -18,7 +18,7 @@ struct TutorListView: View {
             
             ForEach(tutorListVM.tutorViewModels) {tutorVM in
                 NavigationLink(destination: //TutorDetailView(tutorVM: tutorVM)
-                                TutorDetailView()
+                                TutorDetailView(tutorVM: tutorVM)
                 ) {
                     TutorCellView(tutorVM: tutorVM)
                 }

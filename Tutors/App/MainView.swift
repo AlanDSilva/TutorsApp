@@ -39,7 +39,6 @@ struct MainView: View {
                     Text("Account")
                 }
         }
-        .accentColor(.white)
         
     }
 }
